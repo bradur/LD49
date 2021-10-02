@@ -16,8 +16,6 @@ public class IKOrchestrator : MonoBehaviour
             legIK.Orchestrator = this;
         }
         animator = GetComponent<Animator>();
-        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0.0f);
-        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.0f);
     }
 
     // Update is called once per frame

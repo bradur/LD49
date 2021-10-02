@@ -15,6 +15,8 @@ public class Ragdollizer : MonoBehaviour
     private Vector3 velocity;
     private Vector3 lastPosition;
 
+    public bool Debug = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,14 @@ public class Ragdollizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!manualTrigger) {
+        if (Debug && !manualTrigger) {
             var movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             transform.Translate(movement * Time.deltaTime * 10.0f, Space.Self);
         }
         
         velocity = (transform.position - lastPosition) / Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Debug && Input.GetKeyDown(KeyCode.Space)) {
             manualTrigger = !manualTrigger;
         }
 
