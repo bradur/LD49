@@ -17,6 +17,8 @@ public class Ragdollizer : MonoBehaviour
 
     public bool Debug = false;
 
+    public GameObject bottle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +44,7 @@ public class Ragdollizer : MonoBehaviour
 
         if (manualTrigger) {
             Enable();
-        }
-        else {
-            disable();
+            manualTrigger = false;
         }
 
         lastPosition = transform.position;
@@ -55,13 +55,24 @@ public class Ragdollizer : MonoBehaviour
         {
             rb.isKinematic = false;
             rb.useGravity = true;
-            rb.AddForce(velocity + Vector3.down * 0.25f, ForceMode.VelocityChange);
+            rb.AddForce(velocity * 0.5f + Vector3.down * 10f, ForceMode.VelocityChange);
         }
         foreach (var coll in ragdollColliders)
         {
             coll.enabled = true;
         }
         animator.enabled = false;
+
+        if (bottle != null) {
+            bottle.transform.parent = null;
+            var rb = bottle.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
+            rb.AddForce(velocity + Vector3.up * 5f, ForceMode.VelocityChange);
+
+            var coll = bottle.GetComponent<Collider>();
+            coll.enabled = true;
+        }
     }
 
     private void disable() {
