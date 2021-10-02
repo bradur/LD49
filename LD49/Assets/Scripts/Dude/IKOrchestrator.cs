@@ -5,6 +5,7 @@ using UnityEngine;
 public class IKOrchestrator : MonoBehaviour
 {
     private LegIK[] legIKs;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,9 @@ public class IKOrchestrator : MonoBehaviour
         {
             legIK.Orchestrator = this;
         }
+        animator = GetComponent<Animator>();
+        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0.0f);
+        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.0f);
     }
 
     // Update is called once per frame
