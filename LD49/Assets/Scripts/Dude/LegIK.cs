@@ -32,6 +32,7 @@ public class LegIK : MonoBehaviour
     private float footMoveSpeed = 25.0f;
 
     private Vector3 optimalSpotOffset;
+    private Quaternion footTargetRotation;
     private int groundMask;
 
     [SerializeField]
@@ -40,7 +41,7 @@ public class LegIK : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ikTarget.parent = transform.parent;
+        ikTarget.parent = null;
         ikTarget.position = footTransform.position;
 
         optimalSpotOffset = optimalSpot.position - transform.position;
@@ -65,6 +66,8 @@ public class LegIK : MonoBehaviour
                 moving = true;
                 Orchestrator.SetMovingLeg(this);
                 ikTarget.position = footTransform.position;
+                var randomAngle = Random.Range(-25f, 25f);
+                footTargetRotation = optimalSpot.rotation * Quaternion.AngleAxis(randomAngle, Vector3.up);
             }
         }
 
@@ -74,6 +77,7 @@ public class LegIK : MonoBehaviour
                 Orchestrator.SetMovingLeg(null);
             } else {
                 ikTarget.position = Vector3.MoveTowards(ikTarget.position, optimalGroundSpot, footMoveSpeed * Time.deltaTime);
+                ikTarget.rotation = Quaternion.RotateTowards(ikTarget.rotation, footTargetRotation, 180f * Time.deltaTime);
             }
         }
     }
