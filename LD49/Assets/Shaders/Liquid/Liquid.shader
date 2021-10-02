@@ -21,6 +21,7 @@ Shader "Unlit/SpecialFX/Liquid"
         Pass
         {
             Zwrite On
+            ZTest LEqual
             Cull Off // we want the front and back faces
             AlphaToMask On // transparency
 
