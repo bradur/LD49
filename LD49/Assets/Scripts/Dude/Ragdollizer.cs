@@ -104,6 +104,8 @@ public class Ragdollizer : MonoBehaviour
         var footRb = foot.transform.parent.parent.GetComponent<Rigidbody>();
         footRb.AddForce(slipDirection * 20.0f + Vector3.up * 1.5f, ForceMode.VelocityChange);
         var bananaRb = banana.GetComponent<Rigidbody>();
+        bananaRb.isKinematic = false;
+        bananaRb.useGravity = true;
         bananaRb.AddForce(slipDirection * 10.0f + Vector3.up * 5f, ForceMode.VelocityChange);
     }
 }
