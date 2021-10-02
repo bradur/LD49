@@ -33,7 +33,7 @@ public class LegIK : MonoBehaviour
 
     private Vector3 optimalSpotOffset;
     private int groundMask;
-    
+
     [SerializeField]
     private Vector3 ikTargetGroundOffset = new Vector3(0, 1.0f, 0);
 
@@ -41,12 +41,12 @@ public class LegIK : MonoBehaviour
     void Start()
     {
         ikTarget.parent = transform.parent;
-        ikTarget.position = optimalSpot.position;
+        ikTarget.position = footTransform.position;
 
         optimalSpotOffset = optimalSpot.position - transform.position;
         optimalSpot.parent = transform.parent;
 
-        groundMask = LayerMask.GetMask("Ground");
+        groundMask = LayerMask.GetMask("Ground", "Obstacle");
     }
 
     // Update is called once per frame
@@ -69,7 +69,7 @@ public class LegIK : MonoBehaviour
         }
 
         if (moving) {
-            if (Vector3.Distance(optimalGroundSpot, ikTarget.position) < 0.01f){
+            if (Vector3.Distance(optimalGroundSpot, ikTarget.position) < 0.1f){
                 moving = false;
                 Orchestrator.SetMovingLeg(null);
             } else {

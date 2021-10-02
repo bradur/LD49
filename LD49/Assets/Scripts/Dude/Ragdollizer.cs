@@ -1,47 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Ragdollizer : MonoBehaviour
 {
-    private Rigidbody[] rigidbodies;
-    private Collider[] colliders;
+    private List<Rigidbody> ragdollRigidbodies;
+    private List<Collider> ragdollColliders;
+    private Animator animator;
+
+    [SerializeField]
+    private bool manualTrigger;
+
+    private Vector3 velocity;
+    private Vector3 lastPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbodies = GetComponentsInChildren<Rigidbody>();
-        colliders = GetComponentsInChildren<Collider>();
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>().ToList();
+        ragdollColliders = GetComponentsInChildren<Collider>().ToList();
+        animator = GetComponent<Animator>();
         disable();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!manualTrigger) {
+            var movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            transform.Translate(movement * Time.deltaTime * 10.0f, Space.Self);
+        }
         
+        velocity = (transform.position - lastPosition) / Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            manualTrigger = !manualTrigger;
+        }
+
+        if (manualTrigger) {
+            enable();
+        }
+        else {
+            disable();
+        }
+
+        lastPosition = transform.position;
     }
 
     private void enable() {
-        foreach (var rb in rigidbodies)
+        foreach (var rb in ragdollRigidbodies)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
+            rb.AddForce(velocity + Vector3.down * 0.25f, ForceMode.VelocityChange);
         }
-        foreach (var coll in colliders)
+        foreach (var coll in ragdollColliders)
         {
             coll.enabled = true;
         }
+        animator.enabled = false;
     }
 
     private void disable() {
-        foreach (var rb in rigidbodies)
+        foreach (var rb in ragdollRigidbodies)
         {
             rb.isKinematic = true;
             rb.useGravity = false;
         }
-        foreach (var coll in colliders)
+        foreach (var coll in ragdollColliders)
         {
             coll.enabled = false;
         }
+        animator.enabled = true;
     }
 }
