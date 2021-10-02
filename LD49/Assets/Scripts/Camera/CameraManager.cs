@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Events;
 
 public class CameraManager : MonoBehaviour
 {
@@ -21,7 +22,10 @@ public class CameraManager : MonoBehaviour
    private bool isBlending = false;
    private bool blendingStarted = false;
 
-   public void SetUp() {
+   private UnityAction afterBlendCallback;
+
+   public void SetUp(UnityAction afterBlend) {
+      afterBlendCallback = afterBlend;
       GameObject player = GameObject.FindGameObjectWithTag("Player");
       if (player == null) {
          Debug.LogWarning("Can't set up camera - GameObject with tag 'Player' missing!");
@@ -46,7 +50,8 @@ public class CameraManager : MonoBehaviour
       }
       if (!cameraBrain.IsBlending) {
          isBlending = false;
-         MoveAlongRoad.main.Begin();
+         afterBlendCallback.Invoke();
       }
    }
 }
+

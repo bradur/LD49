@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SidewaysMovement : MonoBehaviour
 {
+
+    public static SidewaysMovement main;
+    private void Awake() {
+        main = this;
+    }
     private float currentSidewaysSpeed = 1f; // base movementspeed of player when horizontal axis is 1f
     private float currentBalance = 0f;
 
@@ -14,6 +19,8 @@ public class SidewaysMovement : MonoBehaviour
     [SerializeField]
     private BalanceCursor cursor;
 
+    private bool allowMove = false;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -22,9 +29,16 @@ public class SidewaysMovement : MonoBehaviour
         cursor.Initialize(config.MaxBalance);
     }
 
+    public void Begin() {
+        allowMove = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!allowMove) {
+            return;
+        }
         float z = config.ForwardMovementSpeed; //TODO: forward swaying?
 
         float xInput = Input.GetAxis("Horizontal");
@@ -47,9 +61,10 @@ public class SidewaysMovement : MonoBehaviour
         float randomSway = perlinNoise * swaySpeed; // current amount of random sidestep
         float xMovement = xInput + randomSway;
 
-        Vector3 move = transform.right * xMovement + transform.forward * z;
+        Vector3 move = Vector3.right * xMovement + Vector3.forward * z;
 
-        controller.Move(move * Time.deltaTime * currentSidewaysSpeed);
+        transform.Translate(move * Time.deltaTime * currentSidewaysSpeed, Space.Self);
+        //controller.Move(move * Time.deltaTime * currentSidewaysSpeed);
         cursor.SetBalance(currentBalance);
         Debug.Log("cBal: " + currentBalance + " |\txAxis: " + xInput + " |\tbInput: " + balanceInputEffect + " |\tbScale: " + balanceScale);
     }

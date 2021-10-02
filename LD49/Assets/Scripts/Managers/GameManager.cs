@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour
         GenerateRoad.main.Begin();
         UIFullscreenFade.main.FadeOut(delegate
         {
-            CameraManager.main.SetUp();
+            CameraManager.main.SetUp(delegate {
+                MoveAlongRoad.main.Begin();
+                SidewaysMovement.main.Begin();
+            });
         });
     }
 

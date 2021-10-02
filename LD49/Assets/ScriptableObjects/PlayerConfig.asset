@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a12ce361f1dd04281d4257b04f7c28, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
-  ForwardMovementSpeed: 1.2
+  ForwardMovementSpeed: 0
   MinForwardSwaySpeed: 0.5
   MaxForwardSwaySpeed: 1
   SidewaysMovementSpeed: 12
