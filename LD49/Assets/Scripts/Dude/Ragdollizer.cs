@@ -39,7 +39,7 @@ public class Ragdollizer : MonoBehaviour
         }
 
         if (manualTrigger) {
-            enable();
+            Enable();
         }
         else {
             disable();
@@ -48,7 +48,7 @@ public class Ragdollizer : MonoBehaviour
         lastPosition = transform.position;
     }
 
-    private void enable() {
+    public void Enable() {
         foreach (var rb in ragdollRigidbodies)
         {
             rb.isKinematic = false;
