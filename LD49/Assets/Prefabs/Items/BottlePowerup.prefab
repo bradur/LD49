@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 8560624521046347519, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
 --- !u!4 &5595798825797776353 stripped
