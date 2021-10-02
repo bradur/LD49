@@ -72,12 +72,12 @@ public class LegIK : MonoBehaviour
         }
 
         if (moving) {
+            ikTarget.position = Vector3.MoveTowards(ikTarget.position, optimalGroundSpot, footMoveSpeed * Time.deltaTime);
+            ikTarget.rotation = Quaternion.RotateTowards(ikTarget.rotation, footTargetRotation, 180f * Time.deltaTime);
+            
             if (Vector3.Distance(optimalGroundSpot, ikTarget.position) < 0.1f){
                 moving = false;
                 Orchestrator.SetMovingLeg(null);
-            } else {
-                ikTarget.position = Vector3.MoveTowards(ikTarget.position, optimalGroundSpot, footMoveSpeed * Time.deltaTime);
-                ikTarget.rotation = Quaternion.RotateTowards(ikTarget.rotation, footTargetRotation, 180f * Time.deltaTime);
             }
         }
     }
