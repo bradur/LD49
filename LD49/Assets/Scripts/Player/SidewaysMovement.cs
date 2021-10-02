@@ -33,6 +33,10 @@ public class SidewaysMovement : MonoBehaviour
         allowMove = true;
     }
 
+    public void Stop() {
+        allowMove = false;
+    }
+
     // Update is called once per frame
     void Update()
     {

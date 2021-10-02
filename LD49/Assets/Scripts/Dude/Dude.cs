@@ -29,5 +29,6 @@ public class Dude : MonoBehaviour
     private void die() {
         DieEvent.Invoke();
         MoveAlongRoad.main.Stop();
+        SidewaysMovement.main.Stop();
     }
 }
