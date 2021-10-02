@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.bradur.splinemeshfork": {
+      "version": "https://github.com/bradur/SplineMesh.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5c3237ff24b2112f994313aa5c876b41f9abb85f"
+    },
+    "com.unity.cinemachine": {
+      "version": "2.7.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.9.0",
       "depth": 0,
