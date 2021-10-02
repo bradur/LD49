@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a12ce361f1dd04281d4257b04f7c28, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
-  ForwardMovementSpeed: 2
+  ForwardMovementSpeed: 1.2
   MinForwardSwaySpeed: 0.5
   MaxForwardSwaySpeed: 1
-  SidewaysMovementSpeed: 2
-  MinMovementBalanceWeight: 1
-  MaxMovementBalanceWeight: 3
+  SidewaysMovementSpeed: 12
+  MinInputBalanceWeight: 1
+  MaxInputBalanceWeight: 14
   MinSidewaysSwaySpeed: 0.5
-  MaxSidewaysSwaySpeed: 2
+  MaxSidewaysSwaySpeed: 5
   MinDifficultyCoef: 1
   MaxDifficultyCoef: 3
-  MaxBalance: 10
+  MinBalanceScale: 0.5
+  MaxBalanceScale: 1
+  MaxBalance: 40
+  MinBalance: 0.1
+  BalanceWeight: 50
+  PerlinNoiseScale: 1

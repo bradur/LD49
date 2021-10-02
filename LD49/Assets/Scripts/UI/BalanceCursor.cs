@@ -12,10 +12,14 @@ public class BalanceCursor : MonoBehaviour
     private float minRandomValue; 
     [SerializeField]
     private float maxRandomValue;
+    private float maxBalance;
 
     RectTransform rectTransform;
     float value = 0f;
-    // Start is called before the first frame update
+    public void Initialize(float maxBalance) {
+        this.maxBalance = maxBalance;
+    }
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -33,6 +37,7 @@ public class BalanceCursor : MonoBehaviour
     }
 
     public void SetBalance(float balance) {
-        value = balance;
+        float angle = Mathf.Sign(balance) > 0 ? maxAngle : minAngle;
+        value = Mathf.Abs(balance) / maxBalance * angle;
     }
 }

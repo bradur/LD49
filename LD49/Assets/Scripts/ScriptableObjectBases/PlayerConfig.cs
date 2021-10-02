@@ -13,15 +13,21 @@ public class PlayerConfig : ScriptableObject
 
     // Input related
     public float SidewaysMovementSpeed; // Player movement speed
-    public float MinMovementBalanceWeight; // Min amount of how much input affects the balance change
-    public float MaxMovementBalanceWeight; // Max amount of how much input affects the balance change
+    public float MinInputBalanceWeight; // How much input changes the balance at minimum
+    public float MaxInputBalanceWeight; // How much input changes the balance at maximum
 
     // Not directly input related
     public float MinSidewaysSwaySpeed; // Total minimum sway speed
     public float MaxSidewaysSwaySpeed; // Total maximum sway speed
     public float MinDifficultyCoef; // Min difficulty of keeping balance (over time)
     public float MaxDifficultyCoef; // Max difficulty of keeping balance (over time)
+    public float MinBalanceScale; // Min scale factor based on balance ratio
+    public float MaxBalanceScale;
     public float MaxBalance; // How big abs(balance) can be, at max sidewaysSwaySpeed == MaxSidewaysSwaySpeed
+    public float MinBalance;
+    public float BalanceWeight; // How much balance is changed at most between frames
+    public float PerlinNoiseScale; // How fast noise values change
+
 
     // Sideways movement is controlled by these factors
     // - Player control moves the character left or right
