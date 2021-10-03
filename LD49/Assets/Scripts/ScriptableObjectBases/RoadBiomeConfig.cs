@@ -11,6 +11,9 @@ public class RoadBiomeConfig : ScriptableObject
     public int BiomeDurationInNodes = 10;
     private int nodeCount = 0;
 
+    [SerializeField]
+    private AudioClip music;
+
     public List<PropSpawn> Props = new List<PropSpawn>();
     public bool IsFinished() {
         return nodeCount > BiomeDurationInNodes;
@@ -20,6 +23,9 @@ public class RoadBiomeConfig : ScriptableObject
         nodeCount = 0;
         foreach(PropSpawn propSpawn in Props) {
             propSpawn.Init(debug);
+        }
+        if (music != null) {
+            MusicPlayer.main.PlayMusic(music);
         }
     }
 
