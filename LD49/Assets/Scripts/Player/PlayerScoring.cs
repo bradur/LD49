@@ -6,6 +6,10 @@ public class PlayerScoring : MonoBehaviour
 {
     private Dude dude;
 
+    [SerializeField]
+    private SoundManager soundManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,8 @@ public class PlayerScoring : MonoBehaviour
 
     public void Drink()
     {
+
+        soundManager.PlaySound(GameSoundType.DrinkBeer);
         var newAmount = GameManager.Main.Drink();
         dude.SetDrinkAmount(newAmount);
     }
@@ -28,6 +34,7 @@ public class PlayerScoring : MonoBehaviour
     {
         if (collider.gameObject.tag == "Powerup")
         {
+            soundManager.PlaySound(GameSoundType.PickupBeer);
             var newAmount = GameManager.Main.Pickup(); //TODO: pickup what?
             dude.SetDrinkAmount(newAmount);
             Destroy(collider.gameObject);
