@@ -24,8 +24,8 @@ MonoBehaviour:
   MinDifficultyCoef: 1
   MaxDifficultyCoef: 3
   MinBalanceScale: 0.5
-  MaxBalanceScale: 1
+  MaxBalanceScale: 1.5
   MaxBalance: 40
   MinBalance: 0.1
   BalanceWeight: 50
-  PerlinNoiseScale: 1
+  PerlinNoiseScale: 3
