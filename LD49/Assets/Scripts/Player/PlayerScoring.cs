@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerScoring : MonoBehaviour
 {
+    private Dude dude;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        dude = GetComponentInChildren<Dude>();
     }
 
     // Update is called once per frame
@@ -17,6 +19,7 @@ public class PlayerScoring : MonoBehaviour
     }
 
     public void Drink() {
-        GameManager.Main.Drink();
+        var newAmount = GameManager.Main.Drink();
+        dude.SetDrinkAmount(newAmount);
     }
 }
