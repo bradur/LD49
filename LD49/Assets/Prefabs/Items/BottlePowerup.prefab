@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8120376624406928664}
   - component: {fileID: 2715106116938602341}
   - component: {fileID: 3138905667403247722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BottlePowerup
   m_TagString: Powerup
   m_Icon: {fileID: 0}
@@ -83,9 +83,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4964947611819460594}
     m_Modifications:
+    - target: {fileID: 707192037452225590, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1778501291676482863, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294080852226160186, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5024851090454282948, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
       propertyPath: m_RootOrder
@@ -139,9 +147,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle
       objectReference: {fileID: 0}
-    - target: {fileID: 7596186276625565514, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 7912137167564500778, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8560624521046347519, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
       propertyPath: m_CastShadows

@@ -21,6 +21,8 @@ public class Ragdollizer : MonoBehaviour
 
     private int footSnifferLayer;
 
+    private bool triggered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class Ragdollizer : MonoBehaviour
         }
         
         velocity = (transform.position - lastPosition) / Time.deltaTime;
+        lastPosition = transform.position;
 
         if (Debug && Input.GetKeyDown(KeyCode.Space)) {
             manualTrigger = !manualTrigger;
@@ -50,18 +53,22 @@ public class Ragdollizer : MonoBehaviour
             manualTrigger = false;
         }
 
-        lastPosition = transform.position;
     }
 
     public void Enable() {
         Enable(1.0f);
     }
     public void Enable(float forceScale) {
+
+        if (triggered) return;
+
+        triggered = true;
+
         foreach (var rb in ragdollRigidbodies)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
-            rb.AddForce((velocity * 0.5f + Vector3.down * 10f) * forceScale, ForceMode.VelocityChange);
+            rb.AddForce((velocity * 1f + Vector3.down * 5f) * forceScale, ForceMode.VelocityChange);
         }
         foreach (var coll in ragdollColliders)
         {
@@ -74,7 +81,7 @@ public class Ragdollizer : MonoBehaviour
             var rb = bottle.GetComponent<Rigidbody>();
             rb.useGravity = true;
             rb.isKinematic = false;
-            rb.AddForce((velocity + Vector3.up * 5f) * forceScale, ForceMode.VelocityChange);
+            rb.AddForce((velocity + Vector3.up * 10f) * forceScale, ForceMode.VelocityChange);
 
             var coll = bottle.GetComponent<Collider>();
             coll.enabled = true;
@@ -95,6 +102,9 @@ public class Ragdollizer : MonoBehaviour
     }
 
     public void Slip(FootSniffer foot, GameObject banana) {
+
+        if (triggered) return;
+
         Enable(0.0f);
 
         var slipDirection = banana.transform.position - foot.transform.position;
@@ -102,11 +112,11 @@ public class Ragdollizer : MonoBehaviour
         slipDirection.Normalize();
 
         var footRb = foot.transform.parent.parent.GetComponent<Rigidbody>();
-        footRb.AddForce(slipDirection * 20.0f + Vector3.up * 1.5f, ForceMode.VelocityChange);
+        footRb.AddForce(slipDirection * 30.0f + Vector3.up * 1.5f, ForceMode.VelocityChange);
         var bananaRb = banana.GetComponent<Rigidbody>();
         bananaRb.isKinematic = false;
         bananaRb.useGravity = true;
-        bananaRb.AddForce(slipDirection * 10.0f + Vector3.up * 5f, ForceMode.VelocityChange);
+        bananaRb.AddForce(slipDirection * 15.0f + Vector3.up * 10f, ForceMode.VelocityChange);
         var torque = 10.0f;
         bananaRb.AddTorque(new Vector3(Random.Range(-torque, torque), Random.Range(-torque, torque), Random.Range(-torque, torque)), ForceMode.VelocityChange);
     }
