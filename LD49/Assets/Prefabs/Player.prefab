@@ -477,6 +477,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2815632916213288686}
+  - component: {fileID: 3297942376853248850}
+  - component: {fileID: 5711596720400963827}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -502,6 +504,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3297942376853248850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815632916213288687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35df34933b6859c49bb067a56bc28483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: {fileID: 0}
+  allowMove: 0
+  speed: 10
+--- !u!114 &5711596720400963827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815632916213288687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08afd8073d67c1b4e80b16cea50b33ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2815632916445483226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1687,34 @@ PrefabInstance:
     - target: {fileID: 4503727019779334237, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: Debug
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5711596720400963827}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Drink
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerScoring, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}

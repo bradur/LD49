@@ -75,10 +75,8 @@ public class SidewaysMovement : MonoBehaviour
         Vector3 moveVector = Vector3.right * xMovement + Vector3.forward * z;
 
         transform.Translate(moveVector * Time.deltaTime, Space.Self);
-        //controller.Move(move * Time.deltaTime * currentSidewaysSpeed);
         cursor.SetBalance(currentBalance);
-        Debug.Log("cBal: " + currentBalance + " |\txAxis: " + xInput + " |\tbInput: " + balanceInputEffect + " |\tbScale: " + balanceScale);
-
+        
         dude.SetSway(currentBalance / config.MaxBalance);
     }
 }
