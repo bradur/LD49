@@ -53,7 +53,7 @@ public class LegIK : MonoBehaviour
         optimalSpotOffset = optimalSpot.localPosition;
         optimalSpot.parent = transform.parent;
 
-        groundMask = LayerMask.GetMask("Ground", "Obstacle");
+        groundMask = LayerMask.GetMask("Ground");
     }
 
     // Update is called once per frame

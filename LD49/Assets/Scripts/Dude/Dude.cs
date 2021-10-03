@@ -43,6 +43,11 @@ public class Dude : MonoBehaviour
         die();
     }
 
+    public void ObstacleHit() {
+        ragdoll.Enable();
+        die();
+    }
+
     private float drinkAmount = 1.0f;
 
     public void Drink() {

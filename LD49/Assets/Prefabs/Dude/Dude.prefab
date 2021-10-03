@@ -145,6 +145,9 @@ MonoBehaviour:
   DieEvent:
     m_PersistentCalls:
       m_Calls: []
+  DrinkEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1541317237233137831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,11 +1278,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6253489308299638597}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6253489308299638597}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
@@ -1291,11 +1306,27 @@ PrefabInstance:
       value: Slip
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ObstacleHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Dude, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Dude, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6569000042731784269, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
@@ -1360,11 +1391,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6253489308299638597}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6253489308299638597}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
@@ -1376,7 +1419,19 @@ PrefabInstance:
       value: Slip
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ObstacleHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Dude, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Dude, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
@@ -1385,6 +1440,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
       propertyPath: bananaSlipEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969847364779351465, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
+      propertyPath: obstacleHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6569000042731784269, guid: 2ecec4b95527eed478a1e102e2c0fa1a, type: 3}
