@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         UIFullscreenFade.main.FadeOut(delegate
         {
             CameraManager.main.SetUp(delegate {
+                BiomeManager.main.Begin();
                 MoveAlongRoad.main.Begin();
                 SidewaysMovement.main.Begin();
             });
