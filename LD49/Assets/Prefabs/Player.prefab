@@ -478,7 +478,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2815632916213288686}
   - component: {fileID: 3297942376853248850}
-  - component: {fileID: 5711596720400963827}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -519,18 +518,6 @@ MonoBehaviour:
   road: {fileID: 0}
   allowMove: 0
   speed: 10
---- !u!114 &5711596720400963827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815632916213288687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08afd8073d67c1b4e80b16cea50b33ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2815632916445483226
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +628,7 @@ GameObject:
   - component: {fileID: 2815632916863066425}
   - component: {fileID: 2815632916863066428}
   - component: {fileID: 2815632916863066429}
+  - component: {fileID: 1876823361338197632}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -729,8 +717,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 2.6
+  m_Height: 16.84
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &2815632916863066428
@@ -765,6 +753,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: fe6e4cf35fce4ac47ae769d877e63bf4, type: 2}
   cursor: {fileID: 2815632915859879323}
+--- !u!114 &1876823361338197632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815632916863066422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08afd8073d67c1b4e80b16cea50b33ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2815632916998047451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5711596720400963827}
+      objectReference: {fileID: 1876823361338197632}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

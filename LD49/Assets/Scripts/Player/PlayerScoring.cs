@@ -15,11 +15,22 @@ public class PlayerScoring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void Drink() {
+    public void Drink()
+    {
         var newAmount = GameManager.Main.Drink();
         dude.SetDrinkAmount(newAmount);
+    }
+
+    public void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Powerup")
+        {
+            var newAmount = GameManager.Main.Pickup(); //TODO: pickup what?
+            dude.SetDrinkAmount(newAmount);
+            Destroy(collider.gameObject);
+        }
     }
 }

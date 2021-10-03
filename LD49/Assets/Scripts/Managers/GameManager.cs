@@ -65,8 +65,13 @@ public class GameManager : MonoBehaviour
             beerConfig.MaxBeerScoreModifier,
             beerAmount/beerConfig.BeerTotal
         );
-        Debug.Log(score);
+
         return beerAmount/beerConfig.BeerTotal;
+    }
+
+    public float Pickup() {
+        beerAmount = Mathf.Min(beerAmount + beerConfig.BeerPickupAmount, beerConfig.BeerTotal);
+        return beerAmount;
     }
 
     public float GetScore() {
