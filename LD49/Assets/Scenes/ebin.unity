@@ -343,15 +343,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768519883905193318, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: numberOfRoadNodesAtStart
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8499734833550983047, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00022071444
+      value: -0.00022071874
       objectReference: {fileID: 0}
     - target: {fileID: 8499734833550983047, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000009310283
+      value: -0.000009310464
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}

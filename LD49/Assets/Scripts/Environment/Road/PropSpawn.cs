@@ -84,6 +84,10 @@ public class PropSpawn {
 
         Quaternion rotation = GetRotation(sample, newProp.transform);
         newProp.transform.rotation = rotation;
+
+        if (debug) {
+            UnityEngine.Debug.DrawLine(sample.location, sample.location + Vector3.up * 10.0f, Color.red, 300000000.0f);
+        }
     }
 
     private Vector3 CalculatePosition(Vector3 offset, CurveSample sample) {
