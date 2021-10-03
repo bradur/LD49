@@ -24,13 +24,3 @@ MonoBehaviour:
     YPosRange: {x: 0, y: 0}
     OffsetXRange: {x: 10, y: 10}
     OffsetZRange: {x: 0, y: 0}
-  - Prefab: {fileID: 7596186276625565514, guid: af67f639b733fdf49ab2c74121fdfa95, type: 3}
-    FrequencyMode: 1
-    EveryNNodesRange: {x: 0, y: 0}
-    ChancePercentage: 46
-    Limit: 0
-    Amount: 1
-    RotationMode: 0
-    YPosRange: {x: 1, y: 1}
-    OffsetXRange: {x: -5, y: 5}
-    OffsetZRange: {x: 0, y: 0}

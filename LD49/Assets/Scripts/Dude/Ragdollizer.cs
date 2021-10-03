@@ -107,5 +107,7 @@ public class Ragdollizer : MonoBehaviour
         bananaRb.isKinematic = false;
         bananaRb.useGravity = true;
         bananaRb.AddForce(slipDirection * 10.0f + Vector3.up * 5f, ForceMode.VelocityChange);
+        var torque = 10.0f;
+        bananaRb.AddTorque(new Vector3(Random.Range(-torque, torque), Random.Range(-torque, torque), Random.Range(-torque, torque)), ForceMode.VelocityChange);
     }
 }
