@@ -7,22 +7,22 @@ using UnityEngine.UI;
 public class GenerateRoad : MonoBehaviour
 {
     public static GenerateRoad main;
-    private void Awake() {
+    private void Awake()
+    {
         main = this;
     }
 
     [SerializeField]
     private Spline spline;
 
+    public Spline Road { get { return spline; } }
+
     [SerializeField]
     private RoadSmoother roadSmoother;
 
     [SerializeField]
+    private GameObject roadTurnerPrefab;
     private Transform roadTurner;
-
-    [Range(0.1f, 10f)]
-    [SerializeField]
-    private float newNodeInterval = 2f;
 
     private float newNodeTimer = 0f;
 
@@ -59,6 +59,13 @@ public class GenerateRoad : MonoBehaviour
     [Range(2, 20)]
     private int numberOfRoadNodesAtStart = 5;
 
+    public float StepDistance { get { return stepDistance; } }
+
+    private void Start()
+    {
+        SetupRoadTurner();
+    }
+
     public void Begin()
     {
         for (int index = 0; index < numberOfRoadNodesAtStart; index += 1)
@@ -70,30 +77,32 @@ public class GenerateRoad : MonoBehaviour
         MoveAlongRoad.main.UpdatePosition();
     }
 
+    public void Stop()
+    {
+        makeNewRoad = false;
+    }
+
     private void RemoveRedundantStartNodes()
     {
         spline.RemoveNode(spline.nodes[0]);
         spline.RemoveNode(spline.nodes[1]);
     }
 
-    private void SetupRoadTurner() {
+    private void SetupRoadTurner()
+    {
+        if (roadTurner == null) {
+            GameObject roadTurnerObject = Instantiate(roadTurnerPrefab);
+            roadTurnerObject.transform.position = Vector3.zero;
+            roadTurnerObject.transform.rotation = Quaternion.identity;
+            roadTurner = roadTurnerObject.transform;
+        }
         SplineNode prevNode = GetCurrentNode();
         roadTurner.position = prevNode.Position;
-        Vector3 firstPos = spline.nodes[0].Position;
-        Vector3 secondPos = spline.nodes[1].Position;
-        roadTurner.rotation = Quaternion.LookRotation(firstPos, secondPos);
+        SetTurnerDirection();
+        float angle =
+            Random.Range(rotationRange.x, rotationRange.y) * currentDirection;
+        roadTurner.Rotate(0f, angle, 0f);
         nodesUntilTurn = Random.Range(turnFrequency.x, turnFrequency.y);
-    }
-
-    private float AddNode(Vector3 position, Vector3 direction)
-    {
-        SplineNode prevNode = spline.nodes[spline.nodes.Count - 1];
-        Vector3 newPos = prevNode.Position + position;
-        newPos.y = 0f;
-
-        SplineNode node = new SplineNode(newPos, direction);
-        spline.AddNode (node);
-        return Mathf.Abs(Vector3.Distance(prevNode.Position, newPos));
     }
 
     private SplineNode GetCurrentNode()
@@ -111,10 +120,11 @@ public class GenerateRoad : MonoBehaviour
         Vector3 newNodePos =
             new Vector3(roadTurner.position.x, 0f, roadTurner.position.z);
         SplineNode node = new SplineNode(newNodePos, roadTurner.forward);
-        spline.AddNode (node);
-        if (smoothing) {
+        spline.AddNode(node);
+        if (smoothing)
+        {
             SplineNode newlyAddedNode = GetCurrentNode();
-            roadSmoother.SmoothNode (newlyAddedNode);
+            roadSmoother.SmoothNode(newlyAddedNode);
         }
         if (removeOldNodes && spline.nodes.Count > maxNodes)
         {
@@ -166,6 +176,11 @@ public class GenerateRoad : MonoBehaviour
         AddNewNode(smoothing);
     }
 
+    private float CalculateSpeed()
+    {
+        return stepDistance / MoveAlongRoad.main.Speed;
+    }
+
     private void Update()
     {
         if (!makeNewRoad)
@@ -173,7 +188,7 @@ public class GenerateRoad : MonoBehaviour
             return;
         }
         newNodeTimer += Time.deltaTime;
-        if (newNodeTimer >= newNodeInterval)
+        if (newNodeTimer >= CalculateSpeed())
         {
             CreateMoreRoad();
             newNodeTimer = 0f;

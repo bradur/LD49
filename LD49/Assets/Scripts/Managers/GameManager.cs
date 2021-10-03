@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float startLevelDelay = 1f;
 
-    [SerializeField]
-    private BeerMeter beerOMeter;
 
     private float beerAmount = 0f;
     private float score = 0f;
@@ -55,7 +53,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Update() {
-        beerOMeter.SetAmount(beerAmount/beerConfig.BeerTotal);
+        BeerMeter.main.SetAmount(beerAmount/beerConfig.BeerTotal);
     }
 
     public float Drink() {

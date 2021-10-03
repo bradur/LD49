@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class BeerMeter : MonoBehaviour
 {
+    public static BeerMeter main;
+    private void Awake() {
+        main = this;
+    }
+
     [SerializeField]
     private float foamTopPos;
 

@@ -21,7 +21,7 @@ public class RoadSmoother : MonoBehaviour
 
     [Range(0, 1f)]
     public float curvature = 0.3f;
-
+/*
     private void OnValidate()
     {
         SmoothAll();
@@ -80,7 +80,7 @@ public class RoadSmoother : MonoBehaviour
         {
             SmoothNode(Spline.nodes[index + 1]);
         }
-    }
+    }*/
 
     public void SmoothNode(SplineNode node)
     {
