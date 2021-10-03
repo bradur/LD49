@@ -22,12 +22,15 @@ public class SidewaysMovement : MonoBehaviour
 
     private bool allowMove = false;
 
+    private Dude dude;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         currentSidewaysSpeed = config.SidewaysMovementSpeed;
         // TODO: generate random value to offset perlin noise coordinate, so every run is different!
         cursor.Initialize(config.MaxBalance);
+        dude = GetComponentInChildren<Dude>();
     }
 
     public void Begin() {
@@ -75,5 +78,7 @@ public class SidewaysMovement : MonoBehaviour
         //controller.Move(move * Time.deltaTime * currentSidewaysSpeed);
         cursor.SetBalance(currentBalance);
         Debug.Log("cBal: " + currentBalance + " |\txAxis: " + xInput + " |\tbInput: " + balanceInputEffect + " |\tbScale: " + balanceScale);
+
+        dude.SetSway(currentBalance / config.MaxBalance);
     }
 }

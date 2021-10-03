@@ -50,7 +50,7 @@ public class LegIK : MonoBehaviour
         ikTarget.parent = null;
         ikTarget.position = footTransform.position;
 
-        optimalSpotOffset = optimalSpot.position - transform.position;
+        optimalSpotOffset = optimalSpot.localPosition;
         optimalSpot.parent = transform.parent;
 
         groundMask = LayerMask.GetMask("Ground", "Obstacle");
@@ -62,7 +62,7 @@ public class LegIK : MonoBehaviour
         velocity = (transform.position - lastPosition) / Time.deltaTime;
         lastPosition = transform.position;
 
-        optimalSpot.position = transform.position + optimalSpotOffset;
+        //optimalSpot.localPosition = optimalSpotOffset;
 
         var optimalGroundSpot = optimalSpot.position;
         RaycastHit hit;
