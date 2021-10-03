@@ -48,14 +48,8 @@ public class Dude : MonoBehaviour
         die();
     }
 
-    private float drinkAmount = 1.0f;
-
     public void Drink() {
         DrinkEvent.Invoke();
-
-        //TODO: get rid of this once it's handled externally
-        drinkAmount = drinkAmount - 0.25f;
-        SetDrinkAmount(drinkAmount);
     }
 
     public void SetDrinkAmount(float percentage) {

@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         beerOMeter.SetAmount(beerAmount/beerConfig.BeerTotal);
     }
 
-    public void Drink() {
+    public float Drink() {
         beerAmount -= beerConfig.BeerSipAmount;
         score += beerConfig.BeerSipScore * Mathf.Lerp(
             beerConfig.MinBeerScoreModifier,
@@ -66,5 +66,6 @@ public class GameManager : MonoBehaviour
             beerAmount/beerConfig.BeerTotal
         );
         Debug.Log(score);
+        return beerAmount/beerConfig.BeerTotal;
     }
 }
