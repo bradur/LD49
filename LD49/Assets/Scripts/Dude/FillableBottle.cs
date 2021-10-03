@@ -36,7 +36,6 @@ public class FillableBottle : MonoBehaviour
             var fillAmount = Mathf.Lerp(startAmount, targetAmount, t);
             fillAmount = Mathf.Lerp(minFill, maxFill, fillAmount);
             rend.material.SetFloat("_FillAmount", fillAmount);
-            Debug.Log(fillAmount);
         }
     }
 

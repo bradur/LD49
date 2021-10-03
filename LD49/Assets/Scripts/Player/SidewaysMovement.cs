@@ -55,7 +55,7 @@ public class SidewaysMovement : MonoBehaviour
         float balanceNoise = Mathf.PerlinNoise(Time.time * config.PerlinNoiseScale + 2451.3f, 0.0f) * 2f - 1f;
         // input changes balance
         float balanceInputEffect = xInput * (balanceRatio * (config.MaxInputBalanceWeight - config.MinInputBalanceWeight) + config.MinInputBalanceWeight);
-        inputBalanceVelocity += balanceInputEffect * Time.deltaTime;
+        inputBalanceVelocity += balanceInputEffect;
         inputBalanceVelocity = inputBalanceVelocity * Mathf.Pow(config.InputBalanceVelocityDampeningFactor, Time.deltaTime);
         
         currentBalance = currentBalance 
@@ -67,11 +67,11 @@ public class SidewaysMovement : MonoBehaviour
         // current balance ratio determines the sideways sway amount
         float swaySpeed = currentBalance / config.MaxBalance * (config.MaxSidewaysSwaySpeed - config.MinSidewaysSwaySpeed) + config.MinSidewaysSwaySpeed;
         float randomSway = perlinNoise * swaySpeed; // current amount of random sidestep
-        float xMovement = xInput + randomSway;
+        float xMovement = xInput * currentSidewaysSpeed + randomSway;
 
-        Vector3 move = Vector3.right * xMovement + Vector3.forward * z;
+        Vector3 moveVector = Vector3.right * xMovement + Vector3.forward * z;
 
-        transform.Translate(move * Time.deltaTime * currentSidewaysSpeed, Space.Self);
+        transform.Translate(moveVector * Time.deltaTime, Space.Self);
         //controller.Move(move * Time.deltaTime * currentSidewaysSpeed);
         cursor.SetBalance(currentBalance);
         Debug.Log("cBal: " + currentBalance + " |\txAxis: " + xInput + " |\tbInput: " + balanceInputEffect + " |\tbScale: " + balanceScale);
