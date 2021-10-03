@@ -42,11 +42,12 @@ public class GameManager : MonoBehaviour
     }
     
     public void StartLevel() {
+        BiomeManager.main.Begin();
+        PowerupManager.main.Begin();
         GenerateRoad.main.Begin();
         UIFullscreenFade.main.FadeOut(delegate
         {
             CameraManager.main.SetUp(delegate {
-                BiomeManager.main.Begin();
                 MoveAlongRoad.main.Begin();
                 SidewaysMovement.main.Begin();
             });

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Campaign_Main
   m_EditorClassIdentifier: 
   Configs:
-  - {fileID: 11400000, guid: 52fe44e555303c940b2450aa30a259d2, type: 2}
+  - {fileID: 11400000, guid: b1259165271108c4288c99b5f9d7d0df, type: 2}
   - {fileID: 11400000, guid: 3daf63a9384dbf747aefdaeb0303b392, type: 2}

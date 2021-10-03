@@ -33,7 +33,7 @@ public class BiomeManager : MonoBehaviour
     {
         if (propContainer == null) {
             GameObject propContainerObject = Instantiate(propContainerPrefab);
-            propContainerObject.transform.position = Vector3.zero;
+            propContainerObject.transform.position = propContainerPrefab.transform.position;
             propContainerObject.transform.rotation = Quaternion.identity;
             propContainer = propContainerObject.transform;
         }

@@ -56,7 +56,7 @@ public class GenerateRoad : MonoBehaviour
     private int maxTurnsInOneDirection = 3;
 
     [SerializeField]
-    [Range(2, 20)]
+    [Range(2, 2000)]
     private int numberOfRoadNodesAtStart = 5;
 
     public float StepDistance { get { return stepDistance; } }
