@@ -18,6 +18,7 @@ public class SidewaysMovement : MonoBehaviour
     private PlayerConfig config;
     [SerializeField]
     private BalanceCursor cursor;
+    private float inputBalanceVelocity = 0f;
 
     private bool allowMove = false;
 
@@ -53,15 +54,18 @@ public class SidewaysMovement : MonoBehaviour
         // calculate random value, offset to be different from perlin noise below and scaled to [-1,1]
         float balanceNoise = Mathf.PerlinNoise(Time.time * config.PerlinNoiseScale + 2451.3f, 0.0f) * 2f - 1f;
         // input changes balance
-        float balanceInputEffect = -xInput * (balanceRatio * (config.MaxInputBalanceWeight - config.MinInputBalanceWeight) + config.MinInputBalanceWeight);
+        float balanceInputEffect = xInput * (balanceRatio * (config.MaxInputBalanceWeight - config.MinInputBalanceWeight) + config.MinInputBalanceWeight);
+        inputBalanceVelocity += balanceInputEffect * Time.deltaTime;
+        inputBalanceVelocity = inputBalanceVelocity * Mathf.Pow(config.InputBalanceVelocityDampeningFactor, Time.deltaTime);
+        
         currentBalance = currentBalance 
             + balanceNoise * balanceScale * config.BalanceWeight * Time.deltaTime
-            + balanceInputEffect * Time.deltaTime;
+            + inputBalanceVelocity * Time.deltaTime;
         currentBalance = Mathf.Clamp(currentBalance, -config.MaxBalance, config.MaxBalance);
 
         float perlinNoise = Mathf.PerlinNoise(Time.time * config.PerlinNoiseScale, 0.0f);
         // current balance ratio determines the sideways sway amount
-        float swaySpeed = Mathf.Abs(currentBalance) / config.MaxBalance * (config.MaxSidewaysSwaySpeed - config.MinSidewaysSwaySpeed) + config.MinSidewaysSwaySpeed;
+        float swaySpeed = currentBalance / config.MaxBalance * (config.MaxSidewaysSwaySpeed - config.MinSidewaysSwaySpeed) + config.MinSidewaysSwaySpeed;
         float randomSway = perlinNoise * swaySpeed; // current amount of random sidestep
         float xMovement = xInput + randomSway;
 
