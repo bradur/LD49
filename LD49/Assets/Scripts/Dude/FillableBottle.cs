@@ -24,7 +24,6 @@ public class FillableBottle : MonoBehaviour
     void Start()
     {
         rend.material.SetFloat("_FillAmount", maxFill);
-        Debug.Log(rend.material);
     }
 
     // Update is called once per frame
