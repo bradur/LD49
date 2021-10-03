@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86133b1914fd98948bfc6603b673150a, type: 3}
   m_Name: BeerConfig
   m_EditorClassIdentifier: 
-  BeerSipAmount: 5
+  BeerSipAmount: 50
   BeerPickupAmount: 20
   BeerSipScore: 10
   MinBeerScoreModifier: 1

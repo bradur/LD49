@@ -44,6 +44,8 @@ public class LegIK : MonoBehaviour
     private Vector3 velocity;
     private Vector3 lastPosition;
 
+    private bool active = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,14 +106,23 @@ public class LegIK : MonoBehaviour
 
     void OnAnimatorIK(int layerIndex)
     {
-        animator.SetIKPositionWeight(ikGoal, 1.0f);
-        animator.SetIKRotationWeight(ikGoal, 1.0f);
-        animator.SetIKPosition(ikGoal, ikTarget.position + ikTargetGroundOffset);
-        animator.SetIKRotation(ikGoal, ikTarget.rotation);
+        if (active) {
+            animator.SetIKPositionWeight(ikGoal, 1.0f);
+            animator.SetIKRotationWeight(ikGoal, 1.0f);
+            animator.SetIKPosition(ikGoal, ikTarget.position + ikTargetGroundOffset);
+            animator.SetIKRotation(ikGoal, ikTarget.rotation);
+        }
     }
 
     public void AllowedToMove(bool allowed) {
         allowedToMove = allowed;
+    }
+
+    public void Stop() {
+        allowedToMove = false;
+        animator.SetIKPositionWeight(ikGoal, 0.0f);
+        animator.SetIKRotationWeight(ikGoal, 0.0f);
+        active = false;
     }
 
 }

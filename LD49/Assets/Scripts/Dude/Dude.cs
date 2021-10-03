@@ -20,11 +20,22 @@ public class Dude : MonoBehaviour
     private float swaySpeed = 10f;
     private float maxSwayRotation = 40f;
 
+    private Animator animator;
+    private IKOrchestrator iKOrchestrator;
+
+    private int fullBodyLayer, upperbodyLayer, legsLayer;
+
     // Start is called before the first frame update
     void Start()
     {
         ragdoll = GetComponent<Ragdollizer>();
         bottle = GetComponentInChildren<FillableBottle>();
+        animator = GetComponent<Animator>();
+        iKOrchestrator = GetComponent<IKOrchestrator>();
+
+        fullBodyLayer = animator.GetLayerIndex("Full Body");
+        upperbodyLayer = animator.GetLayerIndex("Upper Body");
+        legsLayer = animator.GetLayerIndex("IK Pass");
     }
 
     // Update is called once per frame
@@ -56,12 +67,28 @@ public class Dude : MonoBehaviour
         bottle.SetFillAmount(percentage);
     }
 
+
+    public void Exhaust() {
+        SetSway(0);
+        animator.SetBool("Exhausted", true);
+        animator.SetLayerWeight(fullBodyLayer, 1.0f);
+        animator.SetLayerWeight(upperbodyLayer, 0.0f);
+        animator.SetLayerWeight(legsLayer, 0.0f);
+        animator.Play("Exhaust", fullBodyLayer, 0.0f);
+        die();
+    }
+
+    public void ReleaseBottle() {
+        ragdoll.ReleaseBottle();
+    }
+
     public void SetSway(float amount) { // [-1.0, 1.0]
         amount = Mathf.Clamp(amount, -1.0f, 1.0f);
         targetSway = amount;
     }
 
     private void die() {
+        iKOrchestrator.Stop();
         DieEvent.Invoke();
         MoveAlongRoad.main.Stop();
         SidewaysMovement.main.Stop();

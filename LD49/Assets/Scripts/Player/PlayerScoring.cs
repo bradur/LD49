@@ -24,10 +24,13 @@ public class PlayerScoring : MonoBehaviour
 
     public void Drink()
     {
-
         soundManager.PlaySound(GameSoundType.DrinkBeer);
         var newAmount = GameManager.Main.Drink();
         dude.SetDrinkAmount(newAmount);
+
+        if (newAmount < 0.001f) {
+            dude.Exhaust();
+        }
     }
 
     public void OnTriggerEnter(Collider collider)

@@ -110,4 +110,17 @@ public class Ragdollizer : MonoBehaviour
         var torque = 10.0f;
         bananaRb.AddTorque(new Vector3(Random.Range(-torque, torque), Random.Range(-torque, torque), Random.Range(-torque, torque)), ForceMode.VelocityChange);
     }
+
+    public void ReleaseBottle() {
+        if (bottle != null) {
+            bottle.transform.parent = null;
+            var rb = bottle.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
+            rb.AddForce(Vector3.down * 15.0f, ForceMode.VelocityChange);
+
+            var coll = bottle.GetComponent<Collider>();
+            coll.enabled = true;
+        }
+    }
 }

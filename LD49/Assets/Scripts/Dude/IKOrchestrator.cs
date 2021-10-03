@@ -32,4 +32,11 @@ public class IKOrchestrator : MonoBehaviour
             }
         }
     }
+
+    public void Stop() {
+        foreach (var legIK in legIKs)
+        {
+            legIK.Stop();
+        }
+    }
 }

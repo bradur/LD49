@@ -70,9 +70,9 @@ public class GenerateRoad : MonoBehaviour
     {
         for (int index = 0; index < numberOfRoadNodesAtStart; index += 1)
         {
-            CreateMoreRoad(false);
+            CreateMoreRoad(true);
         }
-        roadSmoother.SmoothAll();
+        //roadSmoother.SmoothAll();
         RemoveRedundantStartNodes();
         MoveAlongRoad.main.UpdatePosition();
     }
