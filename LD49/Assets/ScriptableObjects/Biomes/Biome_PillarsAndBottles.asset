@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Biome_PillarsAndBottles
   m_EditorClassIdentifier: 
   BiomeDurationInNodes: 2
+  music: {fileID: 8300000, guid: 3fb139bea3eb1c542a8e560e6cf9bcc1, type: 3}
   Props:
   - Prefab: {fileID: 8848965569257455174, guid: c9685872c0e9f6f4aadc62a33f3f3a30, type: 3}
     FrequencyMode: 1
