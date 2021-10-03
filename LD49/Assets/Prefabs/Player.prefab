@@ -1430,6 +1430,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.8648273
       objectReference: {fileID: 0}
+    - target: {fileID: 4503727019779334237, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: Debug
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
 --- !u!4 &9208725981312177192 stripped

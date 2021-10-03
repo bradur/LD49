@@ -37,7 +37,7 @@ public class BalanceCursor : MonoBehaviour
     }
 
     public void SetBalance(float balance) {
-        float angle = Mathf.Sign(balance) > 0 ? maxAngle : minAngle;
+        float angle = Mathf.Sign(balance) > 0 ? minAngle : maxAngle;
         value = Mathf.Abs(balance) / maxBalance * angle;
     }
 }
