@@ -27,6 +27,9 @@ public class LegIK : MonoBehaviour
 
     private bool allowedToMove = true;
     private bool moving = false;
+    private Vector3 footMovingStartPosition;
+    private float footStartedMoving;
+    private float footStartedMovingVelocity;
 
     [SerializeField]
     private float footMoveSpeed = 25.0f;
@@ -37,6 +40,9 @@ public class LegIK : MonoBehaviour
 
     [SerializeField]
     private Vector3 ikTargetGroundOffset = new Vector3(0, 1.0f, 0);
+
+    private Vector3 velocity;
+    private Vector3 lastPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +59,9 @@ public class LegIK : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        velocity = (transform.position - lastPosition) / Time.deltaTime;
+        lastPosition = transform.position;
+
         optimalSpot.position = transform.position + optimalSpotOffset;
 
         var optimalGroundSpot = optimalSpot.position;
@@ -66,16 +75,27 @@ public class LegIK : MonoBehaviour
                 moving = true;
                 Orchestrator.SetMovingLeg(this);
                 ikTarget.position = footTransform.position;
+                footMovingStartPosition = ikTarget.position;
                 var randomAngle = Random.Range(-25f, 25f);
                 footTargetRotation = optimalSpot.rotation * Quaternion.AngleAxis(randomAngle, Vector3.up);
+                footStartedMoving = Time.time;
+                footStartedMovingVelocity = velocity.magnitude;
             }
         }
 
         if (moving) {
-            ikTarget.position = Vector3.MoveTowards(ikTarget.position, optimalGroundSpot, footMoveSpeed * Time.deltaTime);
+            var velocityMod = Mathf.Max(footStartedMovingVelocity, 1.0f);
+            var t = (Time.time - footStartedMoving) * velocityMod * 0.4f;
+            t = Mathf.Clamp(t, 0.0f, 1.0f);
+
+            var liftStrength = -(Mathf.Abs(t - 0.5f) * 2.0f - 1.0f);
+            var horizPos = Vector3.Lerp(footMovingStartPosition, optimalGroundSpot, t);
+            var vertPos = 1.5f * Vector3.up * liftStrength;
+            ikTarget.position = horizPos + vertPos;
+
             ikTarget.rotation = Quaternion.RotateTowards(ikTarget.rotation, footTargetRotation, 180f * Time.deltaTime);
             
-            if (Vector3.Distance(optimalGroundSpot, ikTarget.position) < 0.1f){
+            if (t > 0.99999f){
                 moving = false;
                 Orchestrator.SetMovingLeg(null);
             }
