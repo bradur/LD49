@@ -68,4 +68,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(score);
         return beerAmount/beerConfig.BeerTotal;
     }
+
+    public float GetScore() {
+        return score;
+    }
 }
