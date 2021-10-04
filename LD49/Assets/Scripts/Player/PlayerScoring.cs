@@ -62,6 +62,14 @@ public class PlayerScoring : MonoBehaviour
             Debug.Log("BAD WIN!");
             Invoke("BadEnd", 4f);
         }
+        if (collider.gameObject.tag == "MusicTrigger") {
+            RoadBiomeConfig biome = collider.gameObject.GetComponentInParent<MusicTrigger>().Config;
+            if (biome != null && biome.Music != null) {
+                Debug.Log($"Playing music: {biome.Music}");
+                MusicPlayer.main.PlayMusic(biome.Music);
+            }
+            Destroy(collider.gameObject);
+        }
     }
 
     private void GoodEnd() {

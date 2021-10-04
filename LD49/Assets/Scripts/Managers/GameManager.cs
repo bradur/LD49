@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     private float beerAmount = 0f;
     private int score = 0;
 
+    [SerializeField]
+    private GameObject triggerPrefab;
+    public GameObject TriggerPrefab { get { return triggerPrefab; } }
+
     public static GameManager Main
     {
         get; private set;
@@ -84,7 +88,8 @@ public class GameManager : MonoBehaviour
         score += addedScore;
     }
 
-    public float Pickup(int beerAdded) {
+    public float Pickup(int beerAdded)
+    {
         beerAmount = Mathf.Min(beerAmount + beerAdded, beerConfig.BeerTotal);
         beersPickedUp++;
         return beerAmount / beerConfig.BeerTotal;

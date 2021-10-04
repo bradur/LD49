@@ -20,6 +20,8 @@ public class MusicPlayer : MonoBehaviour
 
     [SerializeField]
     private float fadeOutDuration = 0.2f;
+    [SerializeField]
+    private float fadeInDuration = 0.5f;
 
     public void PlayMusic(AudioClip newTrack)
     {
@@ -38,7 +40,12 @@ public class MusicPlayer : MonoBehaviour
             fades.Add(new AudioFade(fadeOutDuration, 0f, musicSource, delegate
             {
                 musicSource.Stop();
-                PlayMusic(newTrack);
+                musicSource.clip = newTrack;
+                musicSource.volume = 0f;
+                musicSource.Play();
+                fades.Add(new AudioFade(fadeInDuration, volume, musicSource, delegate {
+
+                }));
             }));
         }
     }

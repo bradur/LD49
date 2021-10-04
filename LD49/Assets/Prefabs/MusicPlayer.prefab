@@ -174,3 +174,4 @@ MonoBehaviour:
   musicSource: {fileID: 9018552154505034148}
   volume: 0.8
   fadeOutDuration: 3
+  fadeInDuration: 4

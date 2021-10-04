@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beerConfig: {fileID: 11400000, guid: 60644fd36db85664d8bc88b2453fe720, type: 2}
   startLevelDelay: 1
+  triggerPrefab: {fileID: 6709033319517685426, guid: c2e967835303b2b489af2f63693f32e1, type: 3}
 --- !u!1001 &790365552587959212
 PrefabInstance:
   m_ObjectHideFlags: 0

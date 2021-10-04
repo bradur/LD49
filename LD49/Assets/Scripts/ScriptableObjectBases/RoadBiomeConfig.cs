@@ -13,6 +13,7 @@ public class RoadBiomeConfig : ScriptableObject
 
     [SerializeField]
     private AudioClip music;
+    public AudioClip Music { get { return music; } }
 
     [SerializeField]
     private Material roadMaterial;
@@ -23,6 +24,8 @@ public class RoadBiomeConfig : ScriptableObject
     public Material GroundMaterial { get { return groundMaterial; } }
 
     public List<PropSpawn> Props = new List<PropSpawn>();
+
+    private bool firstSpawn = true;
     public bool IsFinished()
     {
         return nodeCount > BiomeDurationInNodes;
@@ -30,27 +33,46 @@ public class RoadBiomeConfig : ScriptableObject
 
     public void Init(bool debug)
     {
+        firstSpawn = true;
         nodeCount = 0;
         foreach (PropSpawn propSpawn in Props)
         {
             propSpawn.Init(debug);
         }
-        if (music != null)
+        /*if (music != null)
         {
             MusicPlayer.main.PlayMusic(music);
-        }
+        }*/
     }
 
-    public void DestroyProps(SplineNode node) {
-        foreach(PropSpawn propSpawn in Props) {
+    public void DestroyProps(SplineNode node)
+    {
+        foreach (PropSpawn propSpawn in Props)
+        {
             propSpawn.DestroyProps(node);
         }
     }
 
+
+
     public void NewNodeWasAdded(ListChangedEventArgs<SplineNode> args, Spline road, Transform container)
     {
-        if (args.newItems == null && args.newItems.Count < 1) {
+        if (args.newItems == null && args.newItems.Count < 1)
+        {
             return;
+        }
+        if (firstSpawn)
+        {
+            firstSpawn = false;
+            float sampleDistance = road.Length - GenerateRoad.main.StepDistance;
+            CurveSample sample = road.GetSampleAtDistance(Mathf.Clamp(sampleDistance, 0, road.Length));
+            GameObject trigger = Instantiate(GameManager.Main.TriggerPrefab);
+            trigger.GetComponentInParent<MusicTrigger>().Config = this;
+
+            Vector3 binormal = (Quaternion.LookRotation(sample.tangent, sample.up) * Vector3.right).normalized;
+            Vector3 pos = sample.location + binormal;
+
+            trigger.transform.localPosition = pos;
         }
         nodeCount++;
         foreach (PropSpawn propSpawn in Props)
