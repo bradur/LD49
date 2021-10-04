@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
 
     private float beerAmount = 0f;
-    private float score = 0f;
+    private int score = 0;
 
     public static GameManager Main
     {
@@ -60,13 +60,18 @@ public class GameManager : MonoBehaviour
 
     public float Drink() {
         beerAmount -= beerConfig.BeerSipAmount;
-        score += beerConfig.BeerSipScore * Mathf.Lerp(
+        int addedScore = (int) (beerConfig.BeerSipScore * Mathf.Lerp(
             beerConfig.MinBeerScoreModifier,
             beerConfig.MaxBeerScoreModifier,
             beerAmount/beerConfig.BeerTotal
-        );
-
+        ));
+        AddScore(addedScore);
         return beerAmount/beerConfig.BeerTotal;
+    }
+
+    public void AddScore(int addedScore) {
+        ScoreUI.main.AddValueAnimated(addedScore);
+        score += addedScore;
     }
 
     public float Pickup() {
@@ -74,7 +79,7 @@ public class GameManager : MonoBehaviour
         return beerAmount;
     }
 
-    public float GetScore() {
+    public int GetScore() {
         return score;
     }
 }

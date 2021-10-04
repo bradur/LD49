@@ -15,8 +15,8 @@ MonoBehaviour:
   SectionDurationInNodes: 5
   Props:
   - Prefab: {fileID: 7740883776665582224, guid: 758039df4f480d640b69592f73f72a38, type: 3}
-    FrequencyMode: 1
-    EveryNNodesRange: {x: 0, y: 0}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 3}
     ChancePercentage: 50
     Limit: 0
     Amount: 1

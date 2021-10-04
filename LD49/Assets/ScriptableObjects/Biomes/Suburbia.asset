@@ -57,26 +57,6 @@ MonoBehaviour:
     YPosRange: {x: 0, y: 0}
     OffsetXRange: {x: -100, y: -20}
     OffsetZRange: {x: 0, y: 0}
-  - Prefab: {fileID: 8848965569257455174, guid: f8205ce7b29dbe34d85ef5f3f4cb7211, type: 3}
-    FrequencyMode: 0
-    EveryNNodesRange: {x: 0, y: 1}
-    ChancePercentage: 100
-    Limit: 0
-    Amount: 2
-    RotationMode: 1
-    YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -100, y: -20}
-    OffsetZRange: {x: 0, y: 0}
-  - Prefab: {fileID: 8848965569257455174, guid: f8205ce7b29dbe34d85ef5f3f4cb7211, type: 3}
-    FrequencyMode: 0
-    EveryNNodesRange: {x: 0, y: 1}
-    ChancePercentage: 100
-    Limit: 0
-    Amount: 2
-    RotationMode: 1
-    YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: 20, y: 100}
-    OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 4287cab24666d724ba3ed0823117908c, type: 3}
     FrequencyMode: 0
     EveryNNodesRange: {x: 0, y: 1}
@@ -96,4 +76,24 @@ MonoBehaviour:
     RotationMode: 1
     YPosRange: {x: 0, y: 0}
     OffsetXRange: {x: -100, y: -20}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 8dee64a465410f84eb436d483c33c361, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 2, y: 4}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -13, y: -13}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 8dee64a465410f84eb436d483c33c361, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 2, y: 4}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 13, y: 13}
     OffsetZRange: {x: 0, y: 0}

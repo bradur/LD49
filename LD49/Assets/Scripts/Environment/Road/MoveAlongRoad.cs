@@ -31,6 +31,18 @@ public class MoveAlongRoad : MonoBehaviour
     private float debugRate = 0f;
     private float oldRoadLength = 0f;
 
+    [SerializeField]
+    private float rotationSpeed = 1f;
+
+    private bool rotationInProgress = false;
+    private float rotationTimer = 0f;
+    private Quaternion originalRotation;
+    private Quaternion targetrotation;
+
+    [Range(1, 10)]
+    [SerializeField]
+    private int startingNode = 1;
+
     public void Begin()
     {
         allowMove = true;
@@ -43,7 +55,7 @@ public class MoveAlongRoad : MonoBehaviour
 
     private void Start()
     {
-        rate = GenerateRoad.main.StepDistance;
+        rate = GenerateRoad.main.StepDistance * startingNode;
         road = GenerateRoad.main.Road;
         road.NodeListChanged += OnRoadLengthChange;
     }
@@ -63,6 +75,7 @@ public class MoveAlongRoad : MonoBehaviour
             return;
         }
         Move();
+        GraduallyRotate();
     }
 
 
@@ -91,6 +104,20 @@ public class MoveAlongRoad : MonoBehaviour
         CurveSample sample = road.GetSampleAtDistance(rate);
 
         transform.localPosition = sample.location;
-        transform.rotation = sample.Rotation;
+        rotationInProgress = true;
+        rotationTimer = 0f;
+//        transform.rotation = sample.Rotation;
+        targetrotation = sample.Rotation;
+        originalRotation = transform.rotation;
+    }
+
+    public void GraduallyRotate() {
+        if (rotationInProgress) {
+            rotationTimer += rotationSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(originalRotation, targetrotation, rotationTimer);
+            if (rotationTimer >= 1f) {
+                rotationInProgress = false;
+            }
+        }
     }
 }
