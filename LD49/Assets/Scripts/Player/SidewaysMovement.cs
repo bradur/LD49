@@ -6,7 +6,8 @@ public class SidewaysMovement : MonoBehaviour
 {
 
     public static SidewaysMovement main;
-    private void Awake() {
+    private void Awake()
+    {
         main = this;
     }
     private float currentSidewaysSpeed = 1f; // base movementspeed of player when horizontal axis is 1f
@@ -33,18 +34,21 @@ public class SidewaysMovement : MonoBehaviour
         dude = GetComponentInChildren<Dude>();
     }
 
-    public void Begin() {
+    public void Begin()
+    {
         allowMove = true;
     }
 
-    public void Stop() {
+    public void Stop()
+    {
         allowMove = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!allowMove) {
+        if (!allowMove)
+        {
             return;
         }
         float z = config.ForwardMovementSpeed; //TODO: forward swaying?
@@ -58,10 +62,18 @@ public class SidewaysMovement : MonoBehaviour
         float balanceNoise = Mathf.PerlinNoise(Time.time * config.PerlinNoiseScale + 2451.3f, 0.0f) * 2f - 1f;
         // input changes balance
         float balanceInputEffect = xInput * (balanceRatio * (config.MaxInputBalanceWeight - config.MinInputBalanceWeight) + config.MinInputBalanceWeight);
+        if (xInput > 0.1f || xInput < -0.1f)
+        {
+            if(Mathf.Abs(inputBalanceVelocity) < config.InitialInputBalanceVelocity) {
+                inputBalanceVelocity = Mathf.Sign(xInput) * config.InitialInputBalanceVelocity;
+            }
+            // inputBalanceVelocity = Mathf.Sign(inputBalanceVelocity) * Mathf.Max(Mathf.Abs(inputBalanceVelocity), config.InitialInputBalanceVelocity);
+            // Debug.Log(inputBalanceVelocity);
+        }
         inputBalanceVelocity += balanceInputEffect;
         inputBalanceVelocity = inputBalanceVelocity * Mathf.Pow(config.InputBalanceVelocityDampeningFactor, Time.deltaTime);
-        
-        currentBalance = currentBalance 
+
+        currentBalance = currentBalance
             + balanceNoise * balanceScale * config.BalanceWeight * Time.deltaTime
             + inputBalanceVelocity * Time.deltaTime;
         currentBalance = Mathf.Clamp(currentBalance, -config.MaxBalance, config.MaxBalance);
@@ -76,7 +88,7 @@ public class SidewaysMovement : MonoBehaviour
 
         transform.Translate(moveVector * Time.deltaTime, Space.Self);
         cursor.SetBalance(currentBalance);
-        
+
         dude.SetSway(currentBalance / config.MaxBalance);
     }
 }
