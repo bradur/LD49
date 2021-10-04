@@ -26,7 +26,9 @@ public class UIMenu : MonoBehaviour
     [SerializeField]
     private UISingleMenu mainMenu;
     [SerializeField]
-    private UISingleMenu endGameMenu;
+    private UISingleMenu gameOverMenu;
+    [SerializeField]
+    private UISingleMenu theEndMenu;
 
     private UISingleMenu activeMenu;
 
@@ -72,13 +74,21 @@ public class UIMenu : MonoBehaviour
     {
         Show(pauseMenu, $"Time is frozen.\n{GetDescription()}");
     }
-    public void ShowEndMenu(string reason)
+    public void ShowGameOverMenu(string reason)
     {
         if (menuActive) {
             Hide(pauseMenu);
         }
-        Show(endGameMenu, $"{reason}\n{GetDescription()}");
+        Show(gameOverMenu, $"{reason}\n{GetDescription()}");
     }
+    public void ShowTheEndMenu(string reason)
+    {
+        if (menuActive) {
+            Hide(pauseMenu);
+        }
+        Show(theEndMenu, $"{reason}\n{GetDescription()}");
+    }
+
 
     private string GetDescription() {
         return $"Score: {GameManager.Main.GetScore()}\nYou picked up {GameManager.Main.BeersPickedUp} beers.\nYou walked {MoveAlongRoad.main.GetTravelDistance()} miles.";
