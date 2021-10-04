@@ -902,6 +902,7 @@ MonoBehaviour:
   debug: 0
   debugRate: 0
   rotationSpeed: 0.75
+  startingNode: 3
 --- !u!1 &2815632916445483226
 GameObject:
   m_ObjectHideFlags: 0
