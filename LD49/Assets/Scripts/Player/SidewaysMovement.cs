@@ -64,7 +64,8 @@ public class SidewaysMovement : MonoBehaviour
         float balanceInputEffect = xInput * (balanceRatio * (config.MaxInputBalanceWeight - config.MinInputBalanceWeight) + config.MinInputBalanceWeight);
         if (xInput > 0.1f || xInput < -0.1f)
         {
-            if(Mathf.Abs(inputBalanceVelocity) < config.InitialInputBalanceVelocity) {
+            if (Mathf.Abs(inputBalanceVelocity) < config.InitialInputBalanceVelocity)
+            {
                 inputBalanceVelocity = Mathf.Sign(xInput) * config.InitialInputBalanceVelocity;
             }
             // inputBalanceVelocity = Mathf.Sign(inputBalanceVelocity) * Mathf.Max(Mathf.Abs(inputBalanceVelocity), config.InitialInputBalanceVelocity);
@@ -90,5 +91,11 @@ public class SidewaysMovement : MonoBehaviour
         cursor.SetBalance(currentBalance);
 
         dude.SetSway(currentBalance / config.MaxBalance);
+    }
+
+    public void Bump()
+    {
+        float prevBalance = currentBalance;
+        currentBalance += config.EnemyBumpAmount * (Random.Range(0, 2) - 1);  // make enemy bump you either direction
     }
 }

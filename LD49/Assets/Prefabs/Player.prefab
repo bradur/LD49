@@ -1010,9 +1010,9 @@ GameObject:
   - component: {fileID: 2815632916863066426}
   - component: {fileID: 2815632916863066427}
   - component: {fileID: 2815632916863066424}
-  - component: {fileID: 2815632916863066425}
   - component: {fileID: 2815632916863066429}
   - component: {fileID: 1876823361338197632}
+  - component: {fileID: 7575803877877592328}
   m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
@@ -1091,20 +1091,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2815632916863066425
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815632916863066422}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.6
-  m_Height: 16.84
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2815632916863066429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,6 +1118,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 223214431800609384}
+--- !u!65 &7575803877877592328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815632916863066422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.1038713, y: 14.678958, z: 7.457763}
+  m_Center: {x: -0.17882395, y: 0.46949244, z: -0.39010072}
 --- !u!1 &2815632916998047451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,7 +3010,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 223214431800609384}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
@@ -3023,6 +3030,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2815632916863066429}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1876823361338197632}
@@ -3030,6 +3041,14 @@ PrefabInstance:
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3126666649328429070}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Bump
+      objectReference: {fileID: 0}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3043,12 +3062,20 @@ PrefabInstance:
       value: Drink
       objectReference: {fileID: 0}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SidewaysMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerScoring, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PlayerScoring, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
+      propertyPath: BumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6253489308299638597, guid: 293b87e501a31c54b8c0f123e9a3e247, type: 3}
       propertyPath: DrinkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
