@@ -7,6 +7,12 @@ public class Powerup : MonoBehaviour
 
     private Vector3 origPosition;
 
+    [SerializeField]
+    private int score = 10;
+
+    public int Score { get { return score; } }
+
+
     // Start is called before the first frame update
     void Start()
     {
