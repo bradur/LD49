@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
   m_Name: Interlude
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 20
+  BiomeDurationInNodes: 3
   music: {fileID: 8300000, guid: 3fb139bea3eb1c542a8e560e6cf9bcc1, type: 3}
   roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
   groundMaterial: {fileID: 2100000, guid: dbec8940ad86ddc46ab6f0989bf779f1, type: 2}
@@ -25,5 +25,5 @@ MonoBehaviour:
     Amount: 1
     RotationMode: 0
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: 10, y: 10}
+    OffsetXRange: {x: 13, y: 13}
     OffsetZRange: {x: 0, y: 0}
