@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
-  beerAmount: 15
+  beerAmount: 30
 --- !u!136 &2715106116938602341
 CapsuleCollider:
   m_ObjectHideFlags: 0

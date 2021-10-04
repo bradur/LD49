@@ -26,7 +26,7 @@ MonoBehaviour:
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 7740883776665582224, guid: 90fd9402cbe34a8429cd67c752331dd9, type: 3}
     FrequencyMode: 0
-    EveryNNodesRange: {x: 1, y: 2}
+    EveryNNodesRange: {x: 0, y: 1}
     ChancePercentage: 50
     Limit: 0
     Amount: 1
