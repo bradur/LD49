@@ -54,6 +54,7 @@ public class Dude : MonoBehaviour
 
     public void Slip(BananaSlipEvent slipEvent) {
         ragdoll.Slip(slipEvent.Foot, slipEvent.Banana);
+        Invoke("FallGameOver", 3f);
         die();
     }
 
