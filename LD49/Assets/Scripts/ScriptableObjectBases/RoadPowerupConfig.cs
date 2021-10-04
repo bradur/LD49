@@ -23,10 +23,19 @@ public class RoadPowerupConfig : ScriptableObject
         }
     }
 
-    public void NewNodeWasAdded(Spline road, Transform container) {
+    public void DestroyProps(SplineNode node) {
+        foreach(PropSpawn propSpawn in Props) {
+            propSpawn.DestroyProps(node);
+        }
+    }
+
+    public void NewNodeWasAdded(Spline road, Transform container, ListChangedEventArgs<SplineNode> args) {
+        if (args.newItems == null && args.newItems.Count < 1) {
+            return;
+        }
         nodeCount++;
         foreach(PropSpawn propSpawn in Props) {
-            propSpawn.NewNode(road, container);
+            propSpawn.NewNode(road, container, args.newItems[0]);
         }
     }
 }

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spline: {fileID: 3035364515987740890}
+  roadMesh: {fileID: 8520705156130412433}
+  groundMesh: {fileID: 6862043207098105611}
   roadSmoother: {fileID: 3035364515987740880}
   roadTurnerPrefab: {fileID: 4477212227515913015, guid: fe4312581a2534645b513118a246a906, type: 3}
   makeNewRoad: 1
@@ -54,7 +56,7 @@ MonoBehaviour:
   maxNodes: 25
   turnFrequency: {x: 2, y: 5}
   maxTurnsInOneDirection: 2
-  numberOfRoadNodesAtStart: 5
+  numberOfRoadNodesAtStart: 20
 --- !u!1 &3035364515987740882
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +68,6 @@ GameObject:
   - component: {fileID: 3035364515987740881}
   - component: {fileID: 3035364515987740890}
   - component: {fileID: 3035364515987740880}
-  - component: {fileID: 3035364515987740883}
   m_Layer: 0
   m_Name: Spline
   m_TagString: Untagged
@@ -86,6 +87,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3730999354992554533}
+  - {fileID: 7616401201262521933}
+  - {fileID: 4376438905083727632}
   m_Father: {fileID: 3035364515613178062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,28 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curvature: 0.134
---- !u!114 &3035364515987740883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035364515987740882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 174367e175762fb48ba55d6171e99990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
-  physicMaterial: {fileID: 0}
-  translation: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
-  scale: {x: 20, y: 1, z: 20}
-  generateCollider: 0
-  updateInPlayMode: 1
-  curveSpace: 0
-  mode: 1
 --- !u!1 &3730999354992554532
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,3 +179,111 @@ Transform:
   m_Father: {fileID: 3035364515987740881}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7491512107739503877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4376438905083727632}
+  - component: {fileID: 6862043207098105611}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4376438905083727632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491512107739503877}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3035364515987740881}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6862043207098105611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491512107739503877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c797d1ad0dd1cfa469111765be614a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: 0
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 18bb6d99f8a467640aa43f4d3378019b, type: 2}
+  physicMaterial: {fileID: 0}
+  translation: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 100, y: 1, z: 100}
+  generateCollider: 0
+  updateInPlayMode: 1
+  curveSpace: 1
+  mode: 2
+--- !u!1 &9059644589944641275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7616401201262521933}
+  - component: {fileID: 8520705156130412433}
+  m_Layer: 0
+  m_Name: Road
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7616401201262521933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059644589944641275}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3035364515987740881}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8520705156130412433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059644589944641275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c797d1ad0dd1cfa469111765be614a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: 1
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
+  physicMaterial: {fileID: 0}
+  translation: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 25, y: 1, z: 25}
+  generateCollider: 0
+  updateInPlayMode: 1
+  curveSpace: 1
+  mode: 2

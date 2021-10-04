@@ -21,6 +21,8 @@ public class BiomeManager : MonoBehaviour
     private int currentBiomeIndex = 0;
     private RoadBiomeConfig currentBiome;
 
+    public RoadBiomeConfig CurrentBiome { get { return currentBiome; } }
+
     [SerializeField]
     private GameObject propContainerPrefab;
     private Transform propContainer;
@@ -31,14 +33,16 @@ public class BiomeManager : MonoBehaviour
 
     public void Begin()
     {
-        if (propContainer == null) {
+        if (propContainer == null)
+        {
             GameObject propContainerObject = Instantiate(propContainerPrefab);
             propContainerObject.transform.position = propContainerPrefab.transform.position;
             propContainerObject.transform.rotation = Quaternion.identity;
             propContainer = propContainerObject.transform;
         }
         road = GenerateRoad.main.Road;
-        if (campaign == null) {
+        if (campaign == null)
+        {
             throw new System.Exception("BiomeManager needs a campaign!");
         }
         campaign.Init();
@@ -48,13 +52,19 @@ public class BiomeManager : MonoBehaviour
             initialized = true;
             road.NodeListChanged += OnRoadLengthChange;
             currentBiome = campaign.GetFirstBiome();
-            currentBiome.Init(debug);
+            InitBiome();
         }
     }
 
     public void Stop()
     {
         allowSpawn = false;
+    }
+
+    public void DestroyProps(SplineNode node) {
+        foreach(RoadBiomeConfig biome in campaign.Configs) {
+            biome.DestroyProps(node);
+        }
     }
 
     private void OnRoadLengthChange(object sender, ListChangedEventArgs<SplineNode> args)
@@ -67,15 +77,28 @@ public class BiomeManager : MonoBehaviour
         {
             ChangeBiome();
         }
-        currentBiome.NewNodeWasAdded(road, propContainer);
+        currentBiome.NewNodeWasAdded(args, road, propContainer);
     }
 
     private void ChangeBiome()
     {
         RoadBiomeConfig oldBiome = currentBiome;
         currentBiome = campaign.GetNextBiome();
-        currentBiome.Init(debug);
+        InitBiome();
         Debug.Log($"Biome: [{oldBiome}] -> {currentBiome}");
+    }
+
+    private void InitBiome()
+    {
+        currentBiome.Init(debug);
+        if (currentBiome.RoadMaterial != null)
+        {
+            GenerateRoad.main.RoadMesh.material = currentBiome.RoadMaterial;
+        }
+        if (currentBiome.GroundMaterial != null)
+        {
+            GenerateRoad.main.GroundMesh.material = currentBiome.GroundMaterial;
+        }
     }
 
 }

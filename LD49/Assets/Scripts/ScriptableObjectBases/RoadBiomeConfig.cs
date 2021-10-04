@@ -14,25 +14,48 @@ public class RoadBiomeConfig : ScriptableObject
     [SerializeField]
     private AudioClip music;
 
+    [SerializeField]
+    private Material roadMaterial;
+    public Material RoadMaterial { get { return roadMaterial; } }
+
+    [SerializeField]
+    private Material groundMaterial;
+    public Material GroundMaterial { get { return groundMaterial; } }
+
     public List<PropSpawn> Props = new List<PropSpawn>();
-    public bool IsFinished() {
+    public bool IsFinished()
+    {
         return nodeCount > BiomeDurationInNodes;
     }
 
-    public void Init(bool debug) {
+    public void Init(bool debug)
+    {
         nodeCount = 0;
-        foreach(PropSpawn propSpawn in Props) {
+        foreach (PropSpawn propSpawn in Props)
+        {
             propSpawn.Init(debug);
         }
-        if (music != null) {
+        if (music != null)
+        {
             MusicPlayer.main.PlayMusic(music);
         }
     }
 
-    public void NewNodeWasAdded(Spline road, Transform container) {
-        nodeCount++;
+    public void DestroyProps(SplineNode node) {
         foreach(PropSpawn propSpawn in Props) {
-            propSpawn.NewNode(road, container);
+            propSpawn.DestroyProps(node);
+        }
+    }
+
+    public void NewNodeWasAdded(ListChangedEventArgs<SplineNode> args, Spline road, Transform container)
+    {
+        if (args.newItems == null && args.newItems.Count < 1) {
+            return;
+        }
+        nodeCount++;
+        foreach (PropSpawn propSpawn in Props)
+        {
+            propSpawn.NewNode(road, container, args.newItems[0]);
         }
     }
 }
