@@ -14,6 +14,12 @@ public class GenerateRoad : MonoBehaviour
 
     [SerializeField]
     private Spline spline;
+    [SerializeField]
+    private RoadMeshTiling roadMesh;
+    public RoadMeshTiling RoadMesh { get { return roadMesh; } }
+    [SerializeField]
+    private RoadMeshTiling groundMesh;
+    public RoadMeshTiling GroundMesh { get { return groundMesh; } }
 
     public Spline Road { get { return spline; } }
 
@@ -61,13 +67,11 @@ public class GenerateRoad : MonoBehaviour
 
     public float StepDistance { get { return stepDistance; } }
 
-    private void Start()
-    {
-        SetupRoadTurner();
-    }
-
     public void Begin()
     {
+        roadMesh.Begin();
+        groundMesh.Begin();
+        SetupRoadTurner();
         for (int index = 0; index < numberOfRoadNodesAtStart; index += 1)
         {
             CreateMoreRoad(true);
@@ -90,7 +94,8 @@ public class GenerateRoad : MonoBehaviour
 
     private void SetupRoadTurner()
     {
-        if (roadTurner == null) {
+        if (roadTurner == null)
+        {
             GameObject roadTurnerObject = Instantiate(roadTurnerPrefab);
             roadTurnerObject.transform.position = Vector3.zero;
             roadTurnerObject.transform.rotation = Quaternion.identity;
@@ -128,6 +133,8 @@ public class GenerateRoad : MonoBehaviour
         }
         if (removeOldNodes && spline.nodes.Count > maxNodes)
         {
+            BiomeManager.main.DestroyProps(spline.nodes[0]);
+            PowerupManager.main.DestroyProps(spline.nodes[0]);
             spline.RemoveNode(spline.nodes[0]);
         }
         nodesAddedWithoutTurn++;

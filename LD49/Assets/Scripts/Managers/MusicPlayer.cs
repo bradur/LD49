@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public class MusicPlayer : MonoBehaviour
 {
     public static MusicPlayer main;
-    private void Awake() {
+    private void Awake()
+    {
         main = this;
     }
     private List<AudioFade> fades = new List<AudioFade>();
@@ -20,34 +21,49 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField]
     private float fadeOutDuration = 0.2f;
 
-    public void PlayMusic(AudioClip newTrack) {
-        if (!musicSource.isPlaying) {
+    public void PlayMusic(AudioClip newTrack)
+    {
+        if (musicSource.isPlaying && newTrack == musicSource.clip)
+        {
+            return;
+        }
+        if (!musicSource.isPlaying)
+        {
             musicSource.clip = newTrack;
             musicSource.volume = volume;
             musicSource.Play();
-        } else {
-            fades.Add(new AudioFade(fadeOutDuration, 0f, musicSource, delegate {
+        }
+        else
+        {
+            fades.Add(new AudioFade(fadeOutDuration, 0f, musicSource, delegate
+            {
                 musicSource.Stop();
                 PlayMusic(newTrack);
             }));
         }
     }
 
-    public void Update() {
-        for(int index = 0; index < fades.Count; index += 1) {
+    public void Update()
+    {
+        for (int index = 0; index < fades.Count; index += 1)
+        {
             AudioFade fade = fades[index];
-            if (fade != null && fade.IsFading) {
+            if (fade != null && fade.IsFading)
+            {
                 fade.Update();
             }
-            if (!fade.IsFading) {
+            if (!fade.IsFading)
+            {
                 fades.Remove(fade);
             }
         }
     }
 }
 
-public class AudioFade {
-    public AudioFade(float duration, float target, AudioSource track, UnityAction callback) {
+public class AudioFade
+{
+    public AudioFade(float duration, float target, AudioSource track, UnityAction callback)
+    {
         this.duration = duration;
         IsFading = true;
         timer = 0f;
@@ -56,7 +72,7 @@ public class AudioFade {
         audioSource = track;
         fadeComplete = callback;
     }
-    public bool IsFading {get; private set;}
+    public bool IsFading { get; private set; }
     private float duration;
     private float timer;
     private float targetVolume;
@@ -65,10 +81,12 @@ public class AudioFade {
 
     private UnityAction fadeComplete;
 
-    public void Update() {
+    public void Update()
+    {
         timer += Time.unscaledDeltaTime / duration;
         audioSource.volume = Mathf.Lerp(originalVolume, targetVolume, timer);
-        if (timer >= 1) {
+        if (timer >= 1)
+        {
             audioSource.volume = targetVolume;
             IsFading = false;
             fadeComplete.Invoke();
