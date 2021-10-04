@@ -103,7 +103,7 @@ namespace SplineMesh {
 
                     if (!road) {
                         if (!heights.ContainsKey(curve)) {
-                            y -= 0.001f;
+                            y -= 0.0001f;
                             heights[curve] = y;
                         }
                         go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y + heights[curve], go.transform.position.z);

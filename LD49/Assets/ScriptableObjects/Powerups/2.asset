@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad8e31216e12424bb44f08bfb38dd54, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  SectionDurationInNodes: 20
+  SectionDurationInNodes: 15
   Props:
   - Prefab: {fileID: 4708432681894832479, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
     FrequencyMode: 1

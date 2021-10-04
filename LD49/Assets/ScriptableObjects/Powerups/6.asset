@@ -10,23 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ad8e31216e12424bb44f08bfb38dd54, type: 3}
-  m_Name: 3
+  m_Name: 6
   m_EditorClassIdentifier: 
-  SectionDurationInNodes: 15
+  SectionDurationInNodes: 20
   Props:
-  - Prefab: {fileID: 8848965569257455174, guid: 47e5cef45ea78b345ae56d2dd39d477f, type: 3}
+  - Prefab: {fileID: 4708432681894832479, guid: 582f16048d2df3341a0ff771c7cbc8d4, type: 3}
     FrequencyMode: 0
-    EveryNNodesRange: {x: 2, y: 4}
-    ChancePercentage: 40
+    EveryNNodesRange: {x: 1, y: 2}
+    ChancePercentage: 50
     Limit: 0
     Amount: 1
     RotationMode: 0
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -10, y: 10}
+    OffsetXRange: {x: 0.1, y: 0.1}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 7740883776665582224, guid: 758039df4f480d640b69592f73f72a38, type: 3}
     FrequencyMode: 0
     EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 50
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -10, y: 10}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 47e5cef45ea78b345ae56d2dd39d477f, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 3, y: 4}
     ChancePercentage: 50
     Limit: 0
     Amount: 1

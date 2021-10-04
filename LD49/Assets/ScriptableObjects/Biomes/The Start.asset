@@ -10,23 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
-  m_Name: Local Bar
+  m_Name: The Start
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 6
+  BiomeDurationInNodes: 10
   music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
   roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
   groundMaterial: {fileID: 2100000, guid: 4f3dc7acf3b9a444f9eb62d16f6cf7aa, type: 2}
   Props:
-  - Prefab: {fileID: 8848965569257455174, guid: 95c813fbee3a0bf4583f66d390ad568d, type: 3}
-    FrequencyMode: 1
-    EveryNNodesRange: {x: 0, y: 0}
-    ChancePercentage: 100
-    Limit: 1
-    Amount: 1
-    RotationMode: 0
-    YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -50, y: -50}
-    OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 97aeb8022ed16b94d969342a70deeec7, type: 3}
     FrequencyMode: 0
     EveryNNodesRange: {x: 1, y: 2}

@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SectionDurationInNodes: 20
   Props:
-  - Prefab: {fileID: 4708432681894832479, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-    FrequencyMode: 1
-    EveryNNodesRange: {x: 0, y: 0}
+  - Prefab: {fileID: 4708432681894832479, guid: 582f16048d2df3341a0ff771c7cbc8d4, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 2, y: 4}
     ChancePercentage: 50
     Limit: 0
-    Amount: 2
-    RotationMode: 1
+    Amount: 1
+    RotationMode: 0
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -10, y: 10}
+    OffsetXRange: {x: 0.1, y: 0.1}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 7740883776665582224, guid: 758039df4f480d640b69592f73f72a38, type: 3}
     FrequencyMode: 0

@@ -56,7 +56,7 @@ MonoBehaviour:
   maxNodes: 25
   turnFrequency: {x: 2, y: 5}
   maxTurnsInOneDirection: 2
-  numberOfRoadNodesAtStart: 20
+  numberOfRoadNodesAtStart: 30
 --- !u!1 &3035364515987740882
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,6 @@ Transform:
   m_Children:
   - {fileID: 5877975781791200529}
   - {fileID: 1114492692297531955}
-  - {fileID: 1765911654845806348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +79,6 @@ MonoBehaviour:
   bananas:
   - {fileID: 5877975781791200530}
   - {fileID: 1114492692297531952}
-  - {fileID: 1765911654845806351}
   possiblePositions:
   - {x: 0, y: 0, z: -12}
   - {x: 0, y: 0, z: -6}
@@ -220,71 +218,4 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
   m_PrefabInstance: {fileID: 5629727824744524655}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6473486690523553360
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4708432681894832476}
-    m_Modifications:
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.297
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.094
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708432681894832479, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-      propertyPath: m_Name
-      value: Banana Powerup 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
---- !u!1 &1765911654845806351 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4708432681894832479, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-  m_PrefabInstance: {fileID: 6473486690523553360}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1765911654845806348 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4708432681894832476, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
-  m_PrefabInstance: {fileID: 6473486690523553360}
   m_PrefabAsset: {fileID: 0}

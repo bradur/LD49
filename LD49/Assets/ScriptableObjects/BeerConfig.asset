@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BeerConfig
   m_EditorClassIdentifier: 
   BeerSipAmount: 7
-  BeerPickupAmount: 25
+  BeerPickupAmount: 30
   BeerSipScore: 10
   MinBeerScoreModifier: 1
   MaxBeerScoreModifier: 5

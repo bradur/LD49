@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     public float Pickup(int beerAdded) {
         beerAmount = Mathf.Min(beerAmount + beerAdded, beerConfig.BeerTotal);
         beersPickedUp++;
-        return beerAmount;
+        return beerAmount / beerConfig.BeerTotal;
     }
 
     public int GetScore()
