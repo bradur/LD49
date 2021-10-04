@@ -46,6 +46,12 @@ public class PowerupManager : MonoBehaviour
         }
     }
 
+    public void DestroyProps(SplineNode node) {
+        foreach(RoadPowerupConfig powerupConfig in spawnConfig.Configs) {
+            powerupConfig.DestroyProps(node);
+        }
+    }
+
     public void Stop()
     {
         allowSpawn = false;
@@ -61,7 +67,7 @@ public class PowerupManager : MonoBehaviour
         {
             NextConfig();
         }
-        currentConfig.NewNodeWasAdded(road, propContainer);
+        currentConfig.NewNodeWasAdded(road, propContainer, args);
     }
 
     private void NextConfig()

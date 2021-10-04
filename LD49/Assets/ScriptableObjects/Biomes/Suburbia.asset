@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
   m_Name: Suburbia
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 10
+  BiomeDurationInNodes: 5
   music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
+  roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
+  groundMaterial: {fileID: 2100000, guid: 18bb6d99f8a467640aa43f4d3378019b, type: 2}
   Props:
   - Prefab: {fileID: 8848965569257455174, guid: 136701e74a57542498304ae38fc0ff3f, type: 3}
     FrequencyMode: 0

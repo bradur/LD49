@@ -19,11 +19,21 @@ public class PropSpawn {
         }
     }
 
-    public void NewNode(Spline spline, Transform container) {
+    private Dictionary<SplineNode, List<GameObject>> nodeProps = new Dictionary<SplineNode, List<GameObject>>();
+
+    public void NewNode(Spline spline, Transform container, SplineNode node) {
         if (ShouldSpawn()) {
-            Spawn(spline, container);
+            nodeProps[node] = Spawn(spline, container);
         }
         nodesSinceSpawn++;
+    }
+
+    public void DestroyProps(SplineNode node) {
+        if (nodeProps.ContainsKey(node)) {
+            foreach(GameObject prop in nodeProps[node]) {
+                GameObject.Destroy(prop);
+            }
+        }
     }
 
     private void ResetSpawnRate() {
@@ -62,13 +72,14 @@ public class PropSpawn {
         return false;
     }
 
-    private void Spawn(Spline road, Transform container) {
+    private List<GameObject> Spawn(Spline road, Transform container) {
         ResetSpawnRate();
         spawned++;
-
+        List<GameObject> spawnedObjects = new List<GameObject>();
         for (int index = 0; index < Amount; index += 1) {
-            SpawnSingleProp(road, container);
+            spawnedObjects.Add(SpawnSingleProp(road, container));
         }
+        return spawnedObjects;
     }
 
     private CurveSample GetSample(Spline road, Vector3 offset) {
@@ -76,7 +87,7 @@ public class PropSpawn {
         return road.GetSampleAtDistance(Mathf.Clamp(sampleDistance, 0, road.Length));
     }
 
-    private void SpawnSingleProp(Spline road, Transform container) {
+    private GameObject SpawnSingleProp(Spline road, Transform container) {
         Vector3 offset = GetOffsetPosition();
         CurveSample sample = GetSample(road, offset);
         GameObject newProp = GameObject.Instantiate(Prefab, container);
@@ -88,6 +99,7 @@ public class PropSpawn {
         if (debug) {
             UnityEngine.Debug.DrawLine(sample.location, sample.location + Vector3.up * 10.0f, Color.red, 300000000.0f);
         }
+        return newProp;
     }
 
     private Vector3 CalculatePosition(Vector3 offset, CurveSample sample) {

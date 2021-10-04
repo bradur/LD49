@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Biome_ArrowsAndBananas
   m_EditorClassIdentifier: 
   BiomeDurationInNodes: 2
+  music: {fileID: 0}
+  roadMaterial: {fileID: 2100000, guid: ae7042389bdc1244c8489273cd7b6841, type: 2}
+  groundMaterial: {fileID: 2100000, guid: eda1202b4e777d648a60cae9fa12752d, type: 2}
   Props:
   - Prefab: {fileID: 4695961210263999765, guid: 17d8762d117c24543afc75519c6db3ff, type: 3}
     FrequencyMode: 0

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
   m_Name: Biome_PillarsAndBottles
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 2
+  BiomeDurationInNodes: 20
   music: {fileID: 8300000, guid: 3fb139bea3eb1c542a8e560e6cf9bcc1, type: 3}
+  roadMaterial: {fileID: 2100000, guid: eda1202b4e777d648a60cae9fa12752d, type: 2}
+  groundMaterial: {fileID: 2100000, guid: c32a9ca564e63194ebe49fb3693d74f4, type: 2}
   Props:
   - Prefab: {fileID: 8848965569257455174, guid: c9685872c0e9f6f4aadc62a33f3f3a30, type: 3}
     FrequencyMode: 1
