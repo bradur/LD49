@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
   m_Name: Home
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 7
+  BiomeDurationInNodes: 8
   music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
   roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
   groundMaterial: {fileID: 2100000, guid: dbec8940ad86ddc46ab6f0989bf779f1, type: 2}
@@ -78,12 +78,32 @@ MonoBehaviour:
     OffsetXRange: {x: -100, y: -30}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: ba902fa3726967c4f82e1c67f4349dad, type: 3}
-    FrequencyMode: 1
-    EveryNNodesRange: {x: 0, y: 1}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 8, y: 8}
     ChancePercentage: 100
     Limit: 1
     Amount: 1
     RotationMode: 0
     YPosRange: {x: 0, y: 0}
     OffsetXRange: {x: 5, y: 5}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 0dc28a05a38205948b96b26958236d20, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 6, y: 6}
+    ChancePercentage: 100
+    Limit: 1
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 15, y: 20}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: c6879856be2bd26428338f934e24d917, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 7, y: 7}
+    ChancePercentage: 100
+    Limit: 1
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 13, y: 15}
     OffsetZRange: {x: 0, y: 0}
