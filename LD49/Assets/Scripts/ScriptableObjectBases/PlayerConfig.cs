@@ -29,6 +29,7 @@ public class PlayerConfig : ScriptableObject
     public float MinBalance;
     public float BalanceWeight; // How much balance is changed at most between frames
     public float PerlinNoiseScale; // How fast noise values change
+    public float SwayPerlinNoiseScale; // How fast noise values change for sway
     public float EnemyBumpAmount;
 
 

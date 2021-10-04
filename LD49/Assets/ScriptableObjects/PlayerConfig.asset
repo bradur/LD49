@@ -21,7 +21,7 @@ MonoBehaviour:
   InitialInputBalanceVelocity: 2
   InputBalanceVelocityDampeningFactor: 0.75
   MinSidewaysSwaySpeed: 0.5
-  MaxSidewaysSwaySpeed: 20
+  MaxSidewaysSwaySpeed: 17
   MinDifficultyCoef: 1
   MaxDifficultyCoef: 3
   MinBalanceScale: 0.5
@@ -30,4 +30,5 @@ MonoBehaviour:
   MinBalance: 0.1
   BalanceWeight: 50
   PerlinNoiseScale: 3
+  SwayPerlinNoiseScale: 2.5
   EnemyBumpAmount: 25

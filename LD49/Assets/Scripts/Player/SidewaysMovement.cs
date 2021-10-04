@@ -79,7 +79,7 @@ public class SidewaysMovement : MonoBehaviour
             + inputBalanceVelocity * Time.deltaTime;
         currentBalance = Mathf.Clamp(currentBalance, -config.MaxBalance, config.MaxBalance);
 
-        float perlinNoise = Mathf.PerlinNoise(Time.time * config.PerlinNoiseScale, 0.0f);
+        float perlinNoise = Mathf.PerlinNoise(Time.time * config.SwayPerlinNoiseScale, 0.0f);
         // current balance ratio determines the sideways sway amount
         float swaySpeed = currentBalance / config.MaxBalance * (config.MaxSidewaysSwaySpeed - config.MinSidewaysSwaySpeed) + config.MinSidewaysSwaySpeed;
         float randomSway = perlinNoise * swaySpeed; // current amount of random sidestep
