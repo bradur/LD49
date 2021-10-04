@@ -39,6 +39,10 @@ public class MoveAlongRoad : MonoBehaviour
     private Quaternion originalRotation;
     private Quaternion targetrotation;
 
+    [Range(1, 10)]
+    [SerializeField]
+    private int startingNode = 1;
+
     public void Begin()
     {
         allowMove = true;
@@ -51,7 +55,7 @@ public class MoveAlongRoad : MonoBehaviour
 
     private void Start()
     {
-        rate = GenerateRoad.main.StepDistance;
+        rate = GenerateRoad.main.StepDistance * startingNode;
         road = GenerateRoad.main.Road;
         road.NodeListChanged += OnRoadLengthChange;
     }
