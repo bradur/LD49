@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad8e31216e12424bb44f08bfb38dd54, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  SectionDurationInNodes: 5
+  SectionDurationInNodes: 20
   Props:
   - Prefab: {fileID: 4708432681894832479, guid: 3276a00dddf78f248a8254ab548abfb5, type: 3}
     FrequencyMode: 1
     EveryNNodesRange: {x: 0, y: 0}
-    ChancePercentage: 50
+    ChancePercentage: 25
     Limit: 0
     Amount: 1
     RotationMode: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     OffsetXRange: {x: -10, y: 10}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 7740883776665582224, guid: 758039df4f480d640b69592f73f72a38, type: 3}
-    FrequencyMode: 1
-    EveryNNodesRange: {x: 0, y: 0}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 3}
     ChancePercentage: 50
     Limit: 0
     Amount: 1

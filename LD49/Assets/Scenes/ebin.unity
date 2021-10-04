@@ -785,6 +785,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8466416812417090952, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8499734833550983047, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.00022071874

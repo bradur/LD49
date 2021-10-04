@@ -15,7 +15,7 @@ public class SkyScraper : MonoBehaviour
     void Start()
     {
         rend = GetComponent<MeshRenderer>();
-        material = neonMaterials[Random.Range(0, rend.materials.Length)];
+        material = neonMaterials[Random.Range(0, neonMaterials.Count)];
         rend.material = material;
     }
 
