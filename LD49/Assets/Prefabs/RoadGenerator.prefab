@@ -51,7 +51,7 @@ MonoBehaviour:
   roadTurnerPrefab: {fileID: 4477212227515913015, guid: fe4312581a2534645b513118a246a906, type: 3}
   makeNewRoad: 1
   stepDistance: 50
-  rotationRange: {x: 25, y: 45}
+  rotationRange: {x: 10, y: 30}
   removeOldNodes: 1
   maxNodes: 25
   turnFrequency: {x: 2, y: 5}

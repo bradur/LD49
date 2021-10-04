@@ -16,7 +16,7 @@ MonoBehaviour:
   Props:
   - Prefab: {fileID: 4708432681894832479, guid: 582f16048d2df3341a0ff771c7cbc8d4, type: 3}
     FrequencyMode: 0
-    EveryNNodesRange: {x: 1, y: 2}
+    EveryNNodesRange: {x: 2, y: 4}
     ChancePercentage: 50
     Limit: 0
     Amount: 1
