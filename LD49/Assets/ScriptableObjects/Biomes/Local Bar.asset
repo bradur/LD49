@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
+  m_Name: Local Bar
+  m_EditorClassIdentifier: 
+  BiomeDurationInNodes: 6
+  music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
+  Props:
+  - Prefab: {fileID: 8848965569257455174, guid: 95c813fbee3a0bf4583f66d390ad568d, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 2, y: 2}
+    ChancePercentage: 100
+    Limit: 1
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -50, y: -50}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 97aeb8022ed16b94d969342a70deeec7, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 2}
+    ChancePercentage: 100
+    Limit: 3
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 40, y: 100}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 97aeb8022ed16b94d969342a70deeec7, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 2}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -100, y: -40}
+    OffsetZRange: {x: 0, y: 0}
