@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Las Vegas
   m_EditorClassIdentifier: 
   BiomeDurationInNodes: 15
-  music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
+  music: {fileID: 8300000, guid: 6af7ad821ff26c749941cc3222ac0a9c, type: 3}
   roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
   groundMaterial: {fileID: 2100000, guid: 4f3dc7acf3b9a444f9eb62d16f6cf7aa, type: 2}
   Props:

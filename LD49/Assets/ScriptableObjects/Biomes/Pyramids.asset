@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pyramids
   m_EditorClassIdentifier: 
   BiomeDurationInNodes: 25
-  music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
+  music: {fileID: 8300000, guid: 052d23929d3e58f45b3b76737906189c, type: 3}
   roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
   groundMaterial: {fileID: 2100000, guid: 245a221720a51054aba9a9d0ed402ec2, type: 2}
   Props:
