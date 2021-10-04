@@ -15,6 +15,7 @@ public class PlayerConfig : ScriptableObject
     public float SidewaysMovementSpeed; // Player movement speed
     public float MinInputBalanceWeight; // How much input changes the balance at minimum
     public float MaxInputBalanceWeight; // How much input changes the balance at maximum
+    public float InitialInputBalanceVelocity; // Initial velocity for balance change when key is pressed
     public float InputBalanceVelocityDampeningFactor;
 
     // Not directly input related
