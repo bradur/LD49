@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3848901729521614263}
   m_Layer: 0
-  m_Name: Mailbox
+  m_Name: Vegas Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,95 +25,95 @@ Transform:
   m_GameObject: {fileID: 8848965569257455174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7627336274600625931}
+  - {fileID: 170571814719343980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7949702798000054496
+--- !u!1001 &420883516683135623
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 3848901729521614263}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 867caf57503c611409af411923ce43f6, type: 3}
+    - target: {fileID: -7511558181221131132, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 45fcd6643063f8c4f85a57d287eb3417, type: 2}
-    - target: {fileID: -7511558181221131132, guid: 867caf57503c611409af411923ce43f6, type: 3}
+      objectReference: {fileID: 2100000, guid: 53c6dde7c323140408e1085761c18bf7, type: 2}
+    - target: {fileID: -7511558181221131132, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 45fcd6643063f8c4f85a57d287eb3417, type: 2}
-    - target: {fileID: -7511558181221131132, guid: 867caf57503c611409af411923ce43f6, type: 3}
+      objectReference: {fileID: 2100000, guid: 7a268e2f424ceab4bb59e22ab0a604ec, type: 2}
+    - target: {fileID: -7511558181221131132, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 840ac8dd2d9552a41a271e7bf13cbb14, type: 2}
-    - target: {fileID: 919132149155446097, guid: 867caf57503c611409af411923ce43f6, type: 3}
+      objectReference: {fileID: 2100000, guid: d9c1aff9be4cf6e4cae74889f0b44d40, type: 2}
+    - target: {fileID: 919132149155446097, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
       propertyPath: m_Name
-      value: Mailbox
+      value: Vegas Sign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 867caf57503c611409af411923ce43f6, type: 3}
---- !u!4 &7627336274600625931 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
+--- !u!4 &170571814719343980 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 867caf57503c611409af411923ce43f6, type: 3}
-  m_PrefabInstance: {fileID: 7949702798000054496}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a9131228f0cf1a6478c9c3a9ac12d49a, type: 3}
+  m_PrefabInstance: {fileID: 420883516683135623}
   m_PrefabAsset: {fileID: 0}

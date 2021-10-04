@@ -79,7 +79,7 @@ MonoBehaviour:
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 8dee64a465410f84eb436d483c33c361, type: 3}
     FrequencyMode: 0
-    EveryNNodesRange: {x: 1, y: 2}
+    EveryNNodesRange: {x: 2, y: 4}
     ChancePercentage: 100
     Limit: 0
     Amount: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 8dee64a465410f84eb436d483c33c361, type: 3}
     FrequencyMode: 0
-    EveryNNodesRange: {x: 1, y: 2}
+    EveryNNodesRange: {x: 2, y: 4}
     ChancePercentage: 100
     Limit: 0
     Amount: 1

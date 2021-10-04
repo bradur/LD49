@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
   m_Name: Bat Country
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 7
+  BiomeDurationInNodes: 10
   music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
   roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
-  groundMaterial: {fileID: 2100000, guid: dbec8940ad86ddc46ab6f0989bf779f1, type: 2}
+  groundMaterial: {fileID: 2100000, guid: 67d9a08462102b9448b170b4c509968c, type: 2}
   Props:
   - Prefab: {fileID: 8848965569257455174, guid: 3997d2eb9d88c3f4a83b8d5510b04842, type: 3}
     FrequencyMode: 0

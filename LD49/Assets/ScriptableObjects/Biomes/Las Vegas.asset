@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
+  m_Name: Las Vegas
+  m_EditorClassIdentifier: 
+  BiomeDurationInNodes: 15
+  music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
+  roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
+  groundMaterial: {fileID: 2100000, guid: 4f3dc7acf3b9a444f9eb62d16f6cf7aa, type: 2}
+  Props:
+  - Prefab: {fileID: 8848965569257455174, guid: ed9063cab46663846893fef15e52a0df, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 0, y: 0}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 2
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 100, y: 300}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: ed9063cab46663846893fef15e52a0df, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 0, y: 0}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 2
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -300, y: -100}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 1238c9a0890b553408b0d72205340143, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 5, y: 10}
+    OffsetXRange: {x: -100, y: -40}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 1238c9a0890b553408b0d72205340143, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 5, y: 10}
+    OffsetXRange: {x: 40, y: 100}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 1b153e70d78e08f4f89036b22abae536, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: -10, y: 10}
+    OffsetXRange: {x: 40, y: 100}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 1b153e70d78e08f4f89036b22abae536, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: -10, y: 10}
+    OffsetXRange: {x: -100, y: -40}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 82b3a2f9ed4db4b448b4c02fa4e4f45e, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 50
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -25, y: -20}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 82b3a2f9ed4db4b448b4c02fa4e4f45e, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 50
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 20, y: 25}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 6a8ba91048f52dd41971653fd7b42390, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 50
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 20, y: 40}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 6a8ba91048f52dd41971653fd7b42390, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 1, y: 3}
+    ChancePercentage: 50
+    Limit: 0
+    Amount: 1
+    RotationMode: 1
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: -40, y: -20}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: 88c85f29d03e78e41b47a565267ff5c0, type: 3}
+    FrequencyMode: 1
+    EveryNNodesRange: {x: 0, y: 0}
+    ChancePercentage: 100
+    Limit: 1
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 20, y: 20}
+    OffsetZRange: {x: 0, y: 0}
+  - Prefab: {fileID: 8848965569257455174, guid: c9685872c0e9f6f4aadc62a33f3f3a30, type: 3}
+    FrequencyMode: 0
+    EveryNNodesRange: {x: 2, y: 2}
+    ChancePercentage: 100
+    Limit: 0
+    Amount: 1
+    RotationMode: 0
+    YPosRange: {x: 0, y: 0}
+    OffsetXRange: {x: 13, y: 13}
+    OffsetZRange: {x: 0, y: 0}
