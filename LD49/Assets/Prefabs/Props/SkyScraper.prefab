@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eeccc5a70cb3342a243ba5d1041794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
   neonMaterials:
   - {fileID: 2100000, guid: 905c8644b6111d24ea857664bdbeded9, type: 2}
+  - {fileID: 2100000, guid: 8e25bd91ac9779644893298ba44a0de8, type: 2}
   - {fileID: 2100000, guid: c6da3596c6f3f0a4585209a2e8edec79, type: 2}
   - {fileID: 2100000, guid: 2b806e7a5d55fef46bf107460d918a9f, type: 2}
-  - {fileID: 2100000, guid: 8e25bd91ac9779644893298ba44a0de8, type: 2}
 --- !u!1 &8848965569257455174
 GameObject:
   m_ObjectHideFlags: 0

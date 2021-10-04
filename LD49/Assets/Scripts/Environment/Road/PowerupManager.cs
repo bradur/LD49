@@ -37,6 +37,7 @@ public class PowerupManager : MonoBehaviour
         road = GenerateRoad.main.Road;
 
         allowSpawn = true;
+        spawnConfig.Init();
         if (!initialized)
         {
             initialized = true;
@@ -75,5 +76,6 @@ public class PowerupManager : MonoBehaviour
         var oldConfig = currentConfig;
         currentConfig = spawnConfig.GetNext();
         currentConfig.Init(false);
+        Debug.Log($"Powerups: [{oldConfig}] -> {currentConfig}");
     }
 }
