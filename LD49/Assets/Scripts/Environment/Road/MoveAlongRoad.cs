@@ -43,6 +43,16 @@ public class MoveAlongRoad : MonoBehaviour
     [SerializeField]
     private int startingNode = 1;
 
+    private float rateAllTime = 0f;
+
+    public void SetInitialPosition() {
+        rate = GenerateRoad.main.StepDistance * startingNode;
+        rate = Mathf.Clamp(rate, 0f, road.Length);
+        CurveSample sample = road.GetSampleAtDistance(rate);
+
+        transform.localPosition = sample.location;
+        transform.rotation = sample.Rotation;
+    }
     public void Begin()
     {
         allowMove = true;
@@ -94,7 +104,9 @@ public class MoveAlongRoad : MonoBehaviour
 
     private void Move()
     {
-        rate += Time.deltaTime * speed;
+        float rateAdd = Time.deltaTime * speed;
+        rate += rateAdd;
+        rateAllTime += rateAdd;
         UpdatePosition();
     }
 
@@ -106,7 +118,6 @@ public class MoveAlongRoad : MonoBehaviour
         transform.localPosition = sample.location;
         rotationInProgress = true;
         rotationTimer = 0f;
-//        transform.rotation = sample.Rotation;
         targetrotation = sample.Rotation;
         originalRotation = transform.rotation;
     }
@@ -119,5 +130,10 @@ public class MoveAlongRoad : MonoBehaviour
                 rotationInProgress = false;
             }
         }
+    }
+
+    public string GetTravelDistance() {
+        //float steps = (rate - GenerateRoad.main.StepDistance * startingNode) / GenerateRoad.main.StepDistance;
+        return (rateAllTime / GenerateRoad.main.StepDistance / 100.0f).ToString("F2");
     }
 }
