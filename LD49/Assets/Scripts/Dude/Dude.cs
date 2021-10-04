@@ -60,6 +60,7 @@ public class Dude : MonoBehaviour
     public void ObstacleHit() {
         ragdoll.Enable();
         die();
+        UIMenu.main.ShowGameOverMenu("You walked off the road!");
     }
 
     public void Drink() {
@@ -83,6 +84,7 @@ public class Dude : MonoBehaviour
         animator.SetLayerWeight(legsLayer, 0.0f);
         animator.Play("Exhaust", fullBodyLayer, 0.0f);
         die();
+        UIMenu.main.ShowGameOverMenu("You ran out of beer!");
     }
 
     public void ReleaseBottle() {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float startLevelDelay = 1f;
 
+
+    private int beersPickedUp = 0;
+    public int BeersPickedUp { get { return beersPickedUp; } }
 
     private float beerAmount = 0f;
     private int score = 0;
@@ -31,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    public void StartGame()
     {
         UIFullscreenFade.main.FadeIn(delegate
         {
@@ -40,46 +44,61 @@ public class GameManager : MonoBehaviour
 
         beerAmount = beerConfig.BeerTotal;
     }
-    
-    public void StartLevel() {
+
+    public void StartLevel()
+    {
         BiomeManager.main.Begin();
         PowerupManager.main.Begin();
         GenerateRoad.main.Begin();
+        MoveAlongRoad.main.SetInitialPosition();
         UIFullscreenFade.main.FadeOut(delegate
         {
-            CameraManager.main.SetUp(delegate {
+            CameraManager.main.SetUp(delegate
+            {
                 MoveAlongRoad.main.Begin();
                 SidewaysMovement.main.Begin();
             });
         });
     }
 
-    public void Update() {
-        BeerMeter.main.SetAmount(beerAmount/beerConfig.BeerTotal);
+    public void Update()
+    {
+        BeerMeter.main.SetAmount(beerAmount / beerConfig.BeerTotal);
     }
 
-    public float Drink() {
+    public float Drink()
+    {
         beerAmount -= beerConfig.BeerSipAmount;
-        int addedScore = (int) (beerConfig.BeerSipScore * Mathf.Lerp(
+        int addedScore = (int)(beerConfig.BeerSipScore * Mathf.Lerp(
             beerConfig.MinBeerScoreModifier,
             beerConfig.MaxBeerScoreModifier,
-            beerAmount/beerConfig.BeerTotal
+            beerAmount / beerConfig.BeerTotal
         ));
         AddScore(addedScore);
-        return beerAmount/beerConfig.BeerTotal;
+        return beerAmount / beerConfig.BeerTotal;
     }
 
-    public void AddScore(int addedScore) {
+    public void AddScore(int addedScore)
+    {
         ScoreUI.main.AddValueAnimated(addedScore);
         score += addedScore;
     }
 
     public float Pickup(int beerAdded) {
         beerAmount = Mathf.Min(beerAmount + beerAdded, beerConfig.BeerTotal);
+        beersPickedUp++;
         return beerAmount;
     }
 
-    public int GetScore() {
+    public int GetScore()
+    {
         return score;
     }
+
+    // Menu-related functions
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
