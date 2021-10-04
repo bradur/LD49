@@ -43,6 +43,8 @@ namespace SplineMesh {
         [Tooltip("The mode to use to fill the choosen interval with the bent mesh.")]
         public MeshBender.FillingMode mode = MeshBender.FillingMode.StretchToInterval;
 
+        private RoadBiomeConfig previousBiome = null;
+
 
         public void Begin() {
             // tip : if you name all generated content in the same way, you can easily find all of it
@@ -65,8 +67,17 @@ namespace SplineMesh {
 
 
         private Dictionary<CubicBezierCurve, Material> materials = new Dictionary<CubicBezierCurve, Material>();
+        private Dictionary<CubicBezierCurve, float> heights = new Dictionary<CubicBezierCurve, float>();
 
+        float y = 0f;
         public void CreateMeshes() {
+            /*if (previousBiome == null) {
+                previousBiome = BiomeManager.main.CurrentBiome;
+            }
+            if (previousBiome != BiomeManager.main.CurrentBiome) {
+                y -=0.1f;
+                previousBiome = BiomeManager.main.CurrentBiome;
+            }*/
 #if UNITY_EDITOR
             // we don't update if we are in prefab mode
             if (PrefabStageUtility.GetCurrentPrefabStage() != null) return;
@@ -88,6 +99,14 @@ namespace SplineMesh {
                             materials[curve] = BiomeManager.main.CurrentBiome.GroundMaterial;
                         }
                         go.GetComponent<MeshRenderer>().material = materials[curve];
+                    }
+
+                    if (!road) {
+                        if (!heights.ContainsKey(curve)) {
+                            y -= 0.001f;
+                            heights[curve] = y;
+                        }
+                        go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y + heights[curve], go.transform.position.z);
                     }
                     go.GetComponent<MeshCollider>().material = physicMaterial;
                     used.Add(go);
