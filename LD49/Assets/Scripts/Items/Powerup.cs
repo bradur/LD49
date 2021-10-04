@@ -10,7 +10,12 @@ public class Powerup : MonoBehaviour
     [SerializeField]
     private int score = 10;
 
+    [SerializeField]
+    private int beerAmount = 10;
+
     public int Score { get { return score; } }
+
+    public int BeerAmount { get { return beerAmount; } }
 
 
     // Start is called before the first frame update
