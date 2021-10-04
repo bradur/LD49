@@ -57,25 +57,25 @@ MonoBehaviour:
     YPosRange: {x: 0, y: 0}
     OffsetXRange: {x: 20, y: 100}
     OffsetZRange: {x: 0, y: 0}
-  - Prefab: {fileID: 8848965569257455174, guid: 4287cab24666d724ba3ed0823117908c, type: 3}
+  - Prefab: {fileID: 8848965569257455174, guid: ec601b3c0e440c5479f54126191fb773, type: 3}
     FrequencyMode: 1
     EveryNNodesRange: {x: 0, y: 1}
     ChancePercentage: 100
     Limit: 0
-    Amount: 2
+    Amount: 3
     RotationMode: 1
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: 30, y: 100}
+    OffsetXRange: {x: 30, y: 200}
     OffsetZRange: {x: 0, y: 0}
-  - Prefab: {fileID: 8848965569257455174, guid: 4287cab24666d724ba3ed0823117908c, type: 3}
+  - Prefab: {fileID: 8848965569257455174, guid: ec601b3c0e440c5479f54126191fb773, type: 3}
     FrequencyMode: 1
     EveryNNodesRange: {x: 0, y: 1}
     ChancePercentage: 100
     Limit: 0
-    Amount: 2
+    Amount: 3
     RotationMode: 1
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -100, y: -30}
+    OffsetXRange: {x: -200, y: -30}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: ba902fa3726967c4f82e1c67f4349dad, type: 3}
     FrequencyMode: 0
