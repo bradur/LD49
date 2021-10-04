@@ -16,8 +16,8 @@ MonoBehaviour:
   MinForwardSwaySpeed: 0.5
   MaxForwardSwaySpeed: 1
   SidewaysMovementSpeed: 0
-  MinInputBalanceWeight: 0.5
-  MaxInputBalanceWeight: 1.1
+  MinInputBalanceWeight: 0.55
+  MaxInputBalanceWeight: 0.95
   InitialInputBalanceVelocity: 2
   InputBalanceVelocityDampeningFactor: 0.75
   MinSidewaysSwaySpeed: 0.5
