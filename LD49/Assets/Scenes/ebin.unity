@@ -220,6 +220,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679154761 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2286303459054555813, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+  m_PrefabInstance: {fileID: 5948901656044599824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbbe3b33d2678d41900dc537d1991b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &895005025
 Mesh:
   m_ObjectHideFlags: 0
@@ -602,6 +613,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 895005025}
+    - target: {fileID: 269269581107654234, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: FirstButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 679154761}
+    - target: {fileID: 269269581107654234, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: FirstButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 269269581107654234, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: FirstButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 269269581107654234, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: FirstButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2107640647430199904, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 312.39728
@@ -741,6 +768,14 @@ PrefabInstance:
     - target: {fileID: 6974276300280791443, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155263291839158006, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: firstButtonText
+      value: Restart (R)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155263291839158006, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: secondButtonText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7768519883905193318, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: numberOfRoadNodesAtStart
