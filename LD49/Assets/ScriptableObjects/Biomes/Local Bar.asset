@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BiomeDurationInNodes: 6
   music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
+  roadMaterial: {fileID: 2100000, guid: 32f1f7a0b026ac541a59b29edfe41680, type: 2}
+  groundMaterial: {fileID: 2100000, guid: 4f3dc7acf3b9a444f9eb62d16f6cf7aa, type: 2}
   Props:
   - Prefab: {fileID: 8848965569257455174, guid: 95c813fbee3a0bf4583f66d390ad568d, type: 3}
     FrequencyMode: 0
