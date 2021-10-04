@@ -60,7 +60,7 @@ public class Dude : MonoBehaviour
     public void ObstacleHit() {
         ragdoll.Enable();
         die();
-        UIMenu.main.ShowGameOverMenu("You walked off the road!");
+        Invoke("FallGameOver", 3f);
     }
 
     public void Drink() {
@@ -84,7 +84,7 @@ public class Dude : MonoBehaviour
         animator.SetLayerWeight(legsLayer, 0.0f);
         animator.Play("Exhaust", fullBodyLayer, 0.0f);
         die();
-        UIMenu.main.ShowGameOverMenu("You ran out of beer!");
+        Invoke("ExhaustGameOver", 7f);
     }
 
     public void ReleaseBottle() {
@@ -101,5 +101,13 @@ public class Dude : MonoBehaviour
         DieEvent.Invoke();
         MoveAlongRoad.main.Stop();
         SidewaysMovement.main.Stop();
+    }
+
+    private void ExhaustGameOver() {
+        UIMenu.main.ShowGameOverMenu("You ran out of beer!");
+    }
+
+    private void FallGameOver() {
+        UIMenu.main.ShowGameOverMenu("You walked off the road!");
     }
 }
