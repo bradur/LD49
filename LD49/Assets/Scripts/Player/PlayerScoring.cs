@@ -69,6 +69,6 @@ public class PlayerScoring : MonoBehaviour
     }
 
     private void BadEnd() {
-        UIMenu.main.ShowTheEndMenu("You are home but didn't manage to find your way inside.");
+        UIMenu.main.ShowTheEndMenu("You got home! Kinda...");
     }
 }

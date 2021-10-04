@@ -116,7 +116,7 @@ public class Dude : MonoBehaviour
     }
 
     private void FallGameOver() {
-        UIMenu.main.ShowGameOverMenu("You walked off the road!");
+        UIMenu.main.ShowGameOverMenu("You fell into a ditch!");
     }
 
     private void SlipGameOver() {
