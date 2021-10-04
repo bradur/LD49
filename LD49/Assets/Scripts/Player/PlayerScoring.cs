@@ -38,6 +38,8 @@ public class PlayerScoring : MonoBehaviour
         if (collider.gameObject.tag == "Powerup")
         {
             soundManager.PlaySound(GameSoundType.PickupBeer);
+            Powerup powerup = collider.gameObject.GetComponentInChildren<Powerup>();
+            GameManager.Main.AddScore(powerup.Score);
             var newAmount = GameManager.Main.Pickup(); //TODO: pickup what?
             dude.SetDrinkAmount(newAmount);
             Destroy(collider.gameObject);
