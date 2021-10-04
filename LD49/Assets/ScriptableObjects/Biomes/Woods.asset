@@ -10,31 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3f8a6ece24ef14ba8c001366ca84d0, type: 3}
-  m_Name: Suburbia
+  m_Name: Woods
   m_EditorClassIdentifier: 
-  BiomeDurationInNodes: 8
+  BiomeDurationInNodes: 7
   music: {fileID: 8300000, guid: 8ed4bfa93f54ae246b456076c00c7fcc, type: 3}
   Props:
-  - Prefab: {fileID: 8848965569257455174, guid: 136701e74a57542498304ae38fc0ff3f, type: 3}
-    FrequencyMode: 0
-    EveryNNodesRange: {x: 1, y: 3}
-    ChancePercentage: 100
-    Limit: 0
-    Amount: 1
-    RotationMode: 1
-    YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -100, y: -40}
-    OffsetZRange: {x: -5, y: 5}
-  - Prefab: {fileID: 8848965569257455174, guid: 136701e74a57542498304ae38fc0ff3f, type: 3}
-    FrequencyMode: 0
-    EveryNNodesRange: {x: 1, y: 3}
-    ChancePercentage: 100
-    Limit: 0
-    Amount: 1
-    RotationMode: 1
-    YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: 40, y: 100}
-    OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 0f91151760419a246a790de96ff8bedb, type: 3}
     FrequencyMode: 0
     EveryNNodesRange: {x: 0, y: 1}
@@ -76,22 +56,22 @@ MonoBehaviour:
     OffsetXRange: {x: 20, y: 100}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 4287cab24666d724ba3ed0823117908c, type: 3}
-    FrequencyMode: 0
+    FrequencyMode: 1
     EveryNNodesRange: {x: 0, y: 1}
     ChancePercentage: 100
     Limit: 0
-    Amount: 1
+    Amount: 2
     RotationMode: 1
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: 20, y: 100}
+    OffsetXRange: {x: 30, y: 100}
     OffsetZRange: {x: 0, y: 0}
   - Prefab: {fileID: 8848965569257455174, guid: 4287cab24666d724ba3ed0823117908c, type: 3}
-    FrequencyMode: 0
+    FrequencyMode: 1
     EveryNNodesRange: {x: 0, y: 1}
     ChancePercentage: 100
     Limit: 0
-    Amount: 1
+    Amount: 2
     RotationMode: 1
     YPosRange: {x: 0, y: 0}
-    OffsetXRange: {x: -100, y: -20}
+    OffsetXRange: {x: -100, y: -30}
     OffsetZRange: {x: 0, y: 0}
