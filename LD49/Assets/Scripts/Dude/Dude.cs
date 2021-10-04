@@ -63,6 +63,13 @@ public class Dude : MonoBehaviour
         UIMenu.main.ShowEndMenu("You walked off the road!");
     }
 
+    public void Victory() {
+        ragdoll.Enable();
+        iKOrchestrator.Stop();
+        MoveAlongRoad.main.Stop();
+        SidewaysMovement.main.Stop();
+    }
+
     public void Drink() {
         DrinkEvent.Invoke();
     }

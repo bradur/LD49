@@ -9,11 +9,16 @@ public class PlayerScoring : MonoBehaviour
     [SerializeField]
     private SoundManager soundManager;
 
+    private int homeDoor, homeWall;
+
 
     // Start is called before the first frame update
     void Start()
     {
         dude = GetComponentInChildren<Dude>();
+
+        homeDoor = LayerMask.NameToLayer("Home Door");
+        homeWall = LayerMask.NameToLayer("Home Wall");
     }
 
     // Update is called once per frame
@@ -44,5 +49,17 @@ public class PlayerScoring : MonoBehaviour
             dude.SetDrinkAmount(newAmount);
             Destroy(collider.gameObject);
         }
+
+        if (collider.gameObject.layer == homeDoor) {
+            var door = collider.gameObject.GetComponent<CottageDoor>();
+            door.Open();
+            dude.Victory();
+            Debug.Log("GOOD WIN!");
+        }
+        if (collider.gameObject.layer == homeWall) {
+            dude.Victory();
+            Debug.Log("BAD WIN!");
+        }
     }
+
 }
