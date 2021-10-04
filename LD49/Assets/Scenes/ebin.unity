@@ -777,6 +777,18 @@ PrefabInstance:
       propertyPath: secondButtonText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8412119936506195433, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412119936506195433, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: m_Color.g
+      value: 0.64926517
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412119936506195433, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8412119937072517741, guid: 69743ad51f6f67841a305f4e430bb7da, type: 3}
       propertyPath: m_Enabled
       value: 0
