@@ -54,7 +54,7 @@ public class Dude : MonoBehaviour
 
     public void Slip(BananaSlipEvent slipEvent) {
         ragdoll.Slip(slipEvent.Foot, slipEvent.Banana);
-        Invoke("FallGameOver", 3f);
+        Invoke("SlipGameOver", 3f);
         die();
     }
 
@@ -117,5 +117,9 @@ public class Dude : MonoBehaviour
 
     private void FallGameOver() {
         UIMenu.main.ShowGameOverMenu("You walked off the road!");
+    }
+
+    private void SlipGameOver() {
+        UIMenu.main.ShowGameOverMenu("You slipped and hurt your head badly!");
     }
 }
