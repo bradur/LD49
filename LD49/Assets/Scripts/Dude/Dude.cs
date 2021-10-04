@@ -11,6 +11,9 @@ public class Dude : MonoBehaviour
     [SerializeField]
     private UnityEvent DrinkEvent;
 
+    [SerializeField]
+    private UnityEvent BumpEvent;
+
     private FillableBottle bottle;
 
     private Ragdollizer ragdoll;
@@ -61,6 +64,10 @@ public class Dude : MonoBehaviour
 
     public void Drink() {
         DrinkEvent.Invoke();
+    }
+
+    public void BumpHit() {
+        BumpEvent.Invoke();
     }
 
     public void SetDrinkAmount(float percentage) {
