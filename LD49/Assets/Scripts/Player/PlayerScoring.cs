@@ -55,11 +55,20 @@ public class PlayerScoring : MonoBehaviour
             door.Open();
             dude.Victory();
             Debug.Log("GOOD WIN!");
+            Invoke("GoodEnd", 4f);
         }
         if (collider.gameObject.layer == homeWall) {
             dude.Victory();
             Debug.Log("BAD WIN!");
+            Invoke("BadEnd", 4f);
         }
     }
 
+    private void GoodEnd() {
+        UIMenu.main.ShowTheEndMenu("You made it back home safely!");
+    }
+
+    private void BadEnd() {
+        UIMenu.main.ShowTheEndMenu("You are home but didn't manage to find your way inside.");
+    }
 }
